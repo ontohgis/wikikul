@@ -69,10 +69,10 @@ export const data =
             id: null,
             type: 'item',
             labels: {
-                pl: 'Parafia (Kościół katolicki ob. łacińskiego)',
-                en: 'Parish (Latin Church)',
+                pl: 'parafia (Kościół katolicki ob. łacińskiego)',
+                en: 'parish (Latin Church)',
                 de: 'Pfarre',
-                la: 'Parochia',
+                la: 'parochia',
                 ru: 'парафия'
             },
             descriptions: {
@@ -84,8 +84,8 @@ export const data =
             id: null,
             type: 'item',
             labels: {
-                pl: 'Właściwa miejscowość',
-                en: 'Proper dwelling',
+                pl: 'właściwa miejscowość',
+                en: 'proper dwelling',
             },
             descriptions: {
                 pl: null,
@@ -96,9 +96,9 @@ export const data =
             id: null,
             type: 'item',
             labels: {
-                pl: 'Dekanat (Kościół katolicki ob. łacińskiego',
-                en: 'Deanery (Latin Church)',
-                la: 'Decanatus'
+                pl: 'dekanat (Kościół katolicki ob. łacińskiego)',
+                en: 'deanery (Latin Church)',
+                la: 'decanatus'
             },
             descriptions: {
                 pl: null,
@@ -109,10 +109,10 @@ export const data =
             id: null,
             type: 'item',
             labels: {
-                pl: 'Diecezja (Kościół katolicki ob. łacińskiego)',
-                en: 'Diocese (Latin Church)',
+                pl: 'diecezja (Kościół katolicki ob. łacińskiego)',
+                en: 'diocese (Latin Church)',
                 de: 'Diözese',
-                la: 'Dioecesis'
+                la: 'dioecesis'
             },
             descriptions: {
                 pl: null,
