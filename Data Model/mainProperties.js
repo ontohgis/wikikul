@@ -5,8 +5,8 @@ export const data =
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
-                pl: 'jest to',
-                en: 'instance of'
+                pl: 'Typ',
+                en: 'Type'
             },
             descriptions: {
                 pl: null,
@@ -30,6 +30,19 @@ export const data =
             id: null,
             type: 'property',
             datatype: 'wikibase-item',
+            labels: {
+                pl: 'dekanat',
+                en: 'deanery'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
+            type: 'property',
+            datatype: '',
             labels: {
                 pl: 'dekanat',
                 en: 'deanery'
