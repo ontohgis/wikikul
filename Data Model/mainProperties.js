@@ -80,6 +80,19 @@ export const data =
         },
         {
             id: null,
+            type: 'property',
+            datatype: 'external-id',
+            labels: {
+                pl: 'ontohgis',
+                en: 'ontohgis'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
             type: 'item',
             labels: {
                 pl: 'parafia (Kościół katolicki ob. łacińskiego)',
