@@ -12,6 +12,8 @@ export const data =
                 pl: null,
                 en: null
             }
+            //http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of
+            //http://www.cidoc-crm.org/cidoc-crm/P2_has_type
         },
         {
             id: null,
@@ -64,6 +66,7 @@ export const data =
                 pl: null,
                 en: 'Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].'
             }
+            //http://purl.org/dc/terms/date
         },
         {
             id: null,
@@ -77,6 +80,7 @@ export const data =
                 pl: null,
                 en: null
             }
+            //http://purl.org/dc/terms/identifier; that maybe in ontohgis you should replace some rdfs:seeAlso that refer to identifiers by property: http://purl.org/dc/terms/identifier
         },
         {
             id: null,
@@ -95,6 +99,7 @@ export const data =
                 pl: null,
                 en: null
             }
+          //http://www.cidoc-crm.org/cidoc-crm/E21_Person  
         },
         {
             id: null,
@@ -110,6 +115,7 @@ export const data =
                 pl: null,
                 en: null
             }
+            //https://onto.kul.pl/ontohgis/administrative_type_144
         },
         {
             id: null,
@@ -122,6 +128,7 @@ export const data =
                 pl: null,
                 en: null
             }
+            //https://onto.kul.pl/ontohgis/settlement_type_1000
         },
         {
             id: null,
@@ -135,6 +142,7 @@ export const data =
                 pl: null,
                 en: null
             }
+            //https://onto.kul.pl/ontohgis/administrative_type_150
         },
         {
             id: null,
@@ -149,5 +157,20 @@ export const data =
                 pl: null,
                 en: null
             }
+            //https://onto.kul.pl/ontohgis/administrative_type_147
+        },
+        {
+            id: null,
+            type: 'property',
+            datatype: 'wikibase-item',
+            labels: {
+                pl: 'wyznanie',
+                en: 'denomination'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+            //https://dbpedia.org/ontology/denomination
         }
     ]
