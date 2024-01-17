@@ -42,19 +42,6 @@ export const data =
         {
             id: null,
             type: 'property',
-            datatype: '',
-            labels: {
-                pl: 'dekanat',
-                en: 'deanery'
-            },
-            descriptions: {
-                pl: null,
-                en: null
-            }
-        },
-        {
-            id: null,
-            type: 'property',
             datatype: 'wikibase-item',
             labels: {
                 pl: 'diecezja',
