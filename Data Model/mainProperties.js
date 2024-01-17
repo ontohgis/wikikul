@@ -95,6 +95,24 @@ export const data =
             id: null,
             type: 'item',
             labels: {
+                pl: 'Osoba',
+                de: 'Person',
+                en: 'Person',
+                fr: 'Personne',
+                pt: 'Pessoa',
+                el: 'Πρόσωπο',
+                ru: 'Личность',
+                zh: '人物'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
                 pl: 'parafia (Kościół katolicki ob. łacińskiego)',
                 en: 'parish (Latin Church)',
                 de: 'Pfarre',
