@@ -19,7 +19,7 @@ export const data =
             datatype: 'wikibase-item',
             labels: {
                 pl: 'wchodzi w skład',
-                en: null
+                en: 'is part of'
             },
             descriptions: {
                 pl: null,
@@ -32,10 +32,23 @@ export const data =
             datatype: 'wikibase-item',
             labels: {
                 pl: 'znajduje się przy',
-                en: null
+                en: 'works at'
             },
             descriptions: {
                 pl: null,
                 en: null
             }
-        }]
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'Instytucja',
+                en: 'Institution'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        }
+        ]
