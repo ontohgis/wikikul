@@ -1,7 +1,7 @@
 export const data =
     [
         {
-            id: null,
+            id: 'P1',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -16,7 +16,7 @@ export const data =
             //http://www.cidoc-crm.org/cidoc-crm/P2_has_type
         },
         {
-            id: null,
+            id: 'P2',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -29,7 +29,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'P3',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -42,7 +42,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'P4',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -55,7 +55,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'P5',
             type: 'property',
             datatype: 'time',
             labels: {
@@ -69,7 +69,7 @@ export const data =
             //http://purl.org/dc/terms/date
         },
         {
-            id: null,
+            id: 'P6',
             type: 'property',
             datatype: 'external-id',
             labels: {
@@ -83,7 +83,21 @@ export const data =
             //http://purl.org/dc/terms/identifier; that maybe in ontohgis you should replace some rdfs:seeAlso that refer to identifiers by property: http://purl.org/dc/terms/identifier
         },
         {
-            id: null,
+            id: 'P7',
+            type: 'property',
+            datatype: 'wikibase-item',
+            labels: {
+                pl: 'wyznanie',
+                en: 'denomination'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+            //https://dbpedia.org/ontology/denomination
+        },
+        {
+            id: 'Q1',
             type: 'item',
             labels: {
                 pl: 'Osoba',
@@ -102,7 +116,7 @@ export const data =
           //http://www.cidoc-crm.org/cidoc-crm/E21_Person  
         },
         {
-            id: null,
+            id: 'Q2',
             type: 'item',
             labels: {
                 pl: 'parafia (Kościół katolicki ob. łacińskiego)',
@@ -118,7 +132,7 @@ export const data =
             //https://onto.kul.pl/ontohgis/administrative_type_144
         },
         {
-            id: null,
+            id: 'Q3',
             type: 'item',
             labels: {
                 pl: 'właściwa miejscowość',
@@ -131,7 +145,7 @@ export const data =
             //https://onto.kul.pl/ontohgis/settlement_type_1000
         },
         {
-            id: null,
+            id: 'Q4',
             type: 'item',
             labels: {
                 pl: 'dekanat (Kościół katolicki ob. łacińskiego)',
@@ -145,7 +159,7 @@ export const data =
             //https://onto.kul.pl/ontohgis/administrative_type_150
         },
         {
-            id: null,
+            id: 'Q5',
             type: 'item',
             labels: {
                 pl: 'diecezja (Kościół katolicki ob. łacińskiego)',
@@ -158,19 +172,5 @@ export const data =
                 en: null
             }
             //https://onto.kul.pl/ontohgis/administrative_type_147
-        },
-        {
-            id: null,
-            type: 'property',
-            datatype: 'wikibase-item',
-            labels: {
-                pl: 'wyznanie',
-                en: 'denomination'
-            },
-            descriptions: {
-                pl: null,
-                en: null
-            }
-            //https://dbpedia.org/ontology/denomination
         }
     ]
