@@ -1,7 +1,7 @@
 export const data =
     [
         {
-            id: null,
+            id: 'P8',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -15,7 +15,7 @@ export const data =
             //https://www.wikidata.org/wiki/Q1938414
         },
         {
-            id: null,
+            id: 'P9',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -29,7 +29,7 @@ export const data =
             //http://purl.org/dc/terms/isPartOf; https://www.wikidata.org/wiki/Property:P361; http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of
         },
         {
-            id: null,
+            id: 'P10',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -43,7 +43,7 @@ export const data =
             //http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location; https://www.wikidata.org/wiki/Property:P276
         },
         {
-            id: null,
+            id: 'Q6',
             type: 'item',
             labels: {
                 pl: 'instytucja',
