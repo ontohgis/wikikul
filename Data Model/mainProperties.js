@@ -97,6 +97,20 @@ export const data =
             //https://dbpedia.org/ontology/denomination
         },
         {
+            id: null,
+            type: 'property',
+            datatype: 'wikibase-item',
+            labels: {
+                pl: null,
+                en: 'subClassOf'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+            //https://dbpedia.org/ontology/denomination
+        },
+        {
             id: 'Q1',
             type: 'item',
             labels: {
@@ -172,5 +186,41 @@ export const data =
                 en: null
             }
             //https://onto.kul.pl/ontohgis/administrative_type_147
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'budynek mieszkalny',
+                en: 'housing building'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'budynek',
+                en: 'building'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        }
+        ,{
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kościół - obiekt',
+                en: 'church'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
         }
     ]
