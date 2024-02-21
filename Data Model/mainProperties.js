@@ -224,7 +224,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'Q2901',
             type: 'item',
             labels: {
                 pl: 'folwark',
@@ -235,13 +235,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf proper dwelling
                 P11: [
                     'Q3',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2902',
             type: 'item',
             labels: {
                 pl: 'miasto',
@@ -252,13 +253,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf proper dwelling
                 P11: [
                     'Q3',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2903',
             type: 'item',
             labels: {
                 pl: 'wieś',
@@ -269,13 +271,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf proper dwelling
                 P11: [
                     'Q3',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2904',
             type: 'item',
             labels: {
                 pl: 'klasztor - obiekt',
@@ -286,13 +289,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf housing building
                 P11: [
                     'Q2893',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2905',
             type: 'item',
             labels: {
                 pl: 'kaplica - obiekt',
@@ -303,13 +307,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf building
                 P11: [
                     'Q2894',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2906',
             type: 'item',
             labels: {
                 pl: 'kościół filialny',
@@ -320,13 +325,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf church
                 P11: [
                     'Q2895',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2907',
             type: 'item',
             labels: {
                 pl: 'kościół katedralny',
@@ -337,13 +343,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf church
                 P11: [
                     'Q2895',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2908',
             type: 'item',
             labels: {
                 pl: 'kościół kolegiacki',
@@ -354,13 +361,14 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf church
                 P11: [
                     'Q2895',
                 ]
             }
         },
         {
-            id: null,
+            id: 'Q2909',
             type: 'item',
             labels: {
                 pl: 'kościół szpitalny',
@@ -371,6 +379,7 @@ export const data =
                 en: null
             },
             claims: {
+                //subClassOf church
                 P11: [
                     'Q2895',
                 ]
