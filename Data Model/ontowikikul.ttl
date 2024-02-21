@@ -1,10 +1,11 @@
-@prefix : <http://www.semanticweb.org/histo/ontologies/2024/1/untitled-ontology-39/> .
+@prefix : <https://onto.kul.pl/ontowikikul/> .
+@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/histo/ontologies/2024/1/untitled-ontology-39/> .
+@base <https://onto.kul.pl/ontowikikul/> .
 
 <https://onto.kul.pl/ontowikikul/> rdf:type owl:Ontology ;
                                     rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" .
