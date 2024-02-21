@@ -97,7 +97,7 @@ export const data =
             //https://dbpedia.org/ontology/denomination
         },
         {
-            id: null,
+            id: 'P11',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -188,7 +188,7 @@ export const data =
             //https://onto.kul.pl/ontohgis/administrative_type_147
         },
         {
-            id: null,
+            id: 'Q2893',
             type: 'item',
             labels: {
                 pl: 'budynek mieszkalny',
@@ -200,7 +200,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'Q2894',
             type: 'item',
             labels: {
                 pl: 'budynek',
@@ -210,9 +210,9 @@ export const data =
                 pl: null,
                 en: null
             }
-        }
-        ,{
-            id: null,
+        },
+        {
+            id: 'Q2895',
             type: 'item',
             labels: {
                 pl: 'kościół - obiekt',
