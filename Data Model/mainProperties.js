@@ -97,7 +97,7 @@ export const data =
             //https://dbpedia.org/ontology/denomination
         },
         {
-            id: null,
+            id: 'P11',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -188,7 +188,7 @@ export const data =
             //https://onto.kul.pl/ontohgis/administrative_type_147
         },
         {
-            id: null,
+            id: 'Q2893',
             type: 'item',
             labels: {
                 pl: 'budynek mieszkalny',
@@ -200,7 +200,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'Q2894',
             type: 'item',
             labels: {
                 pl: 'budynek',
@@ -210,9 +210,9 @@ export const data =
                 pl: null,
                 en: null
             }
-        }
-        ,{
-            id: null,
+        },
+        {
+            id: 'Q2895',
             type: 'item',
             labels: {
                 pl: 'kościół - obiekt',
@@ -222,5 +222,158 @@ export const data =
                 pl: null,
                 en: null
             }
-        }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'folwark',
+                en: 'demesne'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q3',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'miasto',
+                en: 'city / town'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q3',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'wieś',
+                en: 'village'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q3',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'klasztor - obiekt',
+                en: 'monastery'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2893',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kaplica - obiekt',
+                en: 'chapel'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2894',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kościół filialny',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2895',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kościół katedralny',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2895',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kościół kolegiacki',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2895',
+                ]
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'kościół szpitalny',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            claims: {
+                P11: [
+                    'Q2895',
+                ]
+            }
+        },
     ]
