@@ -13,12 +13,17 @@ const wbEdit = WBEdit(generalConfig)
 async function createObjectsFromList(arg){
     for(let i = 0; i< arg.length; i++){
         try{
-            const {entity} = await wbEdit.entity.create(
-            arg[i]
-        )
-            console.log('created object: ', entity.id)
-            console.log('object type: ', entity.type)
-            console.log('labels: ', entity.labels)
+            if(arg[i].id == null){
+                console.log('found null id. creating a new entity for: ')
+                console.log(JSON.stringify(arg[i]))
+                const {entity} = await wbEdit.entity.create(arg[i])
+                console.log('created object: ', entity.id)
+                console.log('object type: ', entity.type)
+                console.log('labels: ', entity.labels)
+            }
+            else{
+                console.log('id found: '+ arg[i].id)
+            }
         }
         catch(err){
             console.log('ERROR')
