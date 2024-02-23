@@ -118,6 +118,19 @@ ontowikikul:Q3 rdf:type owl:Class ;
                rdfs:label "właściwa miejscowość"@pl .
 
 
+###  https://onto.kul.pl/ontowikikul/Q3646
+ontowikikul:Q3646 rdf:type owl:Class ;
+                  rdfs:label "osada"@pl ,
+                             "settlement"@en .
+
+
+###  https://onto.kul.pl/ontowikikul/Q3647
+ontowikikul:Q3647 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q3646 ;
+                  rdfs:label "mill settlement"@en ,
+                             "osada młyńska"@pl .
+
+
 ###  https://onto.kul.pl/ontowikikul/Q4
 ontowikikul:Q4 rdf:type owl:Class ;
                rdfs:label "deanery (Latin Church)"@en ,
