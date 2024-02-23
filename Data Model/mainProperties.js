@@ -386,7 +386,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'Q3646',
             type: 'item',
             labels: {
                 pl: 'osada',
@@ -398,7 +398,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'Q3647',
             type: 'item',
             labels: {
                 pl: 'osada młyńska',
@@ -408,11 +408,11 @@ export const data =
                 pl: null,
                 en: null
             },
-            // claims: {
-            //     //subClassOf settlement
-            //     P11: [
-            //         '?',
-            //     ]
-            // }
+            claims: {
+                //subClassOf settlement
+                P11: [
+                    'Q3646',
+                ]
+            }
         },
     ]
