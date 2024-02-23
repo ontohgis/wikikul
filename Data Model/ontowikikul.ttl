@@ -1,155 +1,184 @@
+# baseURI: https://onto.kul.pl/ontowikikul/
+
+@base <https://onto.kul.pl/ontowikikul/> .
 @prefix : <https://onto.kul.pl/ontowikikul/> .
+@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
-@base <https://onto.kul.pl/ontowikikul/> .
 
-<https://onto.kul.pl/ontowikikul/> rdf:type owl:Ontology ;
-                                    rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" .
+<https://onto.kul.pl/ontowikikul/>
+	a owl:Ontology ;
+	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" ;
+	.
 
-#################################################################
-#    Classes
-#################################################################
+ontowikikul:Q1
+	a owl:Class ;
+	rdfs:label
+		"Osoba"@pl ,
+		"Person"@de ,
+		"Person"@en ,
+		"Personne"@fr ,
+		"Pessoa"@pt ,
+		"Πρόσωπο"@el ,
+		"Личность"@ru ,
+		"人物"@zh
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q1
-ontowikikul:Q1 rdf:type owl:Class ;
-               rdfs:label "Osoba"@pl ,
-                          "Person"@de ,
-                          "Person"@en ,
-                          "Personne"@fr ,
-                          "Pessoa"@pt ,
-                          "Πρόσωπο"@el ,
-                          "Личность"@ru ,
-                          "人物"@zh .
+ontowikikul:Q2
+	a owl:Class ;
+	rdfs:label
+		"Pfarre"@de ,
+		"parafia (Kościół katolicki ob. łacińskiego)"@pl ,
+		"parish (Latin Church)"@en ,
+		"parochia"@la ,
+		"парафия"@ru
+		;
+	.
 
+ontowikikul:Q2893
+	a owl:Class ;
+	rdfs:label
+		"budynek mieszkalny"@pl ,
+		"housing building"@en
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2
-ontowikikul:Q2 rdf:type owl:Class ;
-               rdfs:label "Pfarre"@de ,
-                          "parafia (Kościół katolicki ob. łacińskiego)"@pl ,
-                          "parish (Latin Church)"@en ,
-                          "parochia"@la ,
-                          "парафия"@ru .
+ontowikikul:Q2894
+	a owl:Class ;
+	rdfs:label
+		"budynek"@pl ,
+		"building"@en
+		;
+	.
 
+ontowikikul:Q2895
+	a owl:Class ;
+	rdfs:label
+		"church"@en ,
+		"kościół - obiekt"@pl
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2893
-ontowikikul:Q2893 rdf:type owl:Class ;
-                  rdfs:label "budynek mieszkalny"@pl ,
-                             "housing building"@en .
+ontowikikul:Q2901
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:label
+		"demesne"@en ,
+		"folwark"@pl
+		;
+	.
 
+ontowikikul:Q2902
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:label
+		"city / town"@en ,
+		"miasto"@pl
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2894
-ontowikikul:Q2894 rdf:type owl:Class ;
-                  rdfs:label "budynek"@pl ,
-                             "building"@en .
+ontowikikul:Q2903
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:label
+		"village"@en ,
+		"wieś"@pl
+		;
+	.
 
+ontowikikul:Q2904
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2893 ;
+	rdfs:label
+		"klasztor - obiekt"@pl ,
+		"monastery"@en
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2895
-ontowikikul:Q2895 rdf:type owl:Class ;
-                  rdfs:label "church"@en ,
-                             "kościół - obiekt"@pl .
+ontowikikul:Q2905
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2894 ;
+	rdfs:label
+		"chapel"@en ,
+		"kaplica - obiekt"@pl
+		;
+	.
 
+ontowikikul:Q2906
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2895 ;
+	rdfs:label "kościół filialny"@pl ;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2901
-ontowikikul:Q2901 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q3 ;
-                  rdfs:label "demesne"@en ,
-                             "folwark"@pl .
+ontowikikul:Q2907
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2895 ;
+	rdfs:label "kościół katedralny"@pl ;
+	.
 
+ontowikikul:Q2908
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2895 ;
+	rdfs:label "kościół kolegiacki"@pl ;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2902
-ontowikikul:Q2902 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q3 ;
-                  rdfs:label "city / town"@en ,
-                             "miasto"@pl .
+ontowikikul:Q2909
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q2895 ;
+	rdfs:label "kościół szpitalny"@pl ;
+	.
 
+ontowikikul:Q3
+	a owl:Class ;
+	rdfs:label "właściwa miejscowość"@pl ;
+	rdfs:comment "proper dwelling"@en ;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2903
-ontowikikul:Q2903 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q3 ;
-                  rdfs:label "village"@en ,
-                             "wieś"@pl .
+ontowikikul:Q3646
+	a owl:Class ;
+	rdfs:label
+		"osada"@pl ,
+		"settlement"@en
+		;
+	.
 
+ontowikikul:Q3647
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:Q3646 ;
+	rdfs:label
+		"mill settlement"@en ,
+		"osada młyńska"@pl
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2904
-ontowikikul:Q2904 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2893 ;
-                  rdfs:label "klasztor - obiekt"@pl ,
-                             "monastery"@en .
+ontowikikul:Q4
+	a owl:Class ;
+	rdfs:label
+		"deanery (Latin Church)"@en ,
+		"decanatus"@la ,
+		"dekanat (Kościół katolicki ob. łacińskiego)"@pl
+		;
+	.
 
+ontowikikul:Q5
+	a owl:Class ;
+	rdfs:label
+		"Diözese"@de ,
+		"diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
+		"diocese (Latin Church)"@en ,
+		"dioecesis"@la
+		;
+	.
 
-###  https://onto.kul.pl/ontowikikul/Q2905
-ontowikikul:Q2905 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2894 ;
-                  rdfs:label "chapel"@en ,
-                             "kaplica - obiekt"@pl .
+ontowikikul:Q6
+	a owl:Class ;
+	rdfs:label
+		"institution"@en ,
+		"instytucja"@pl
+		;
+	.
 
-
-###  https://onto.kul.pl/ontowikikul/Q2906
-ontowikikul:Q2906 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2895 ;
-                  rdfs:label "kościół filialny"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q2907
-ontowikikul:Q2907 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2895 ;
-                  rdfs:label "kościół katedralny"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q2908
-ontowikikul:Q2908 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2895 ;
-                  rdfs:label "kościół kolegiacki"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q2909
-ontowikikul:Q2909 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q2895 ;
-                  rdfs:label "kościół szpitalny"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q3
-ontowikikul:Q3 rdf:type owl:Class ;
-               rdfs:comment "proper dwelling"@en ;
-               rdfs:label "właściwa miejscowość"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q3646
-ontowikikul:Q3646 rdf:type owl:Class ;
-                  rdfs:label "osada"@pl ,
-                             "settlement"@en .
-
-
-###  https://onto.kul.pl/ontowikikul/Q3647
-ontowikikul:Q3647 rdf:type owl:Class ;
-                  rdfs:subClassOf ontowikikul:Q3646 ;
-                  rdfs:label "mill settlement"@en ,
-                             "osada młyńska"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q4
-ontowikikul:Q4 rdf:type owl:Class ;
-               rdfs:label "deanery (Latin Church)"@en ,
-                          "decanatus"@la ,
-                          "dekanat (Kościół katolicki ob. łacińskiego)"@pl .
-
-
-###  https://onto.kul.pl/ontowikikul/Q5
-ontowikikul:Q5 rdf:type owl:Class ;
-               rdfs:label "Diözese"@de ,
-                          "diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
-                          "diocese (Latin Church)"@en ,
-                          "dioecesis"@la .
-
-
-###  https://onto.kul.pl/ontowikikul/Q6
-ontowikikul:Q6 rdf:type owl:Class ;
-               rdfs:label "institution"@en ,
-                          "instytucja"@pl .
-
-
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
