@@ -53,6 +53,65 @@ ontowikikul:Q2895 rdf:type owl:Class ;
                              "kościół - obiekt"@pl .
 
 
+###  https://onto.kul.pl/ontowikikul/Q2901
+ontowikikul:Q2901 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q3 ;
+                  rdfs:label "demesne"@en ,
+                             "folwark"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2902
+ontowikikul:Q2902 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q3 ;
+                  rdfs:label "city / town"@en ,
+                             "miasto"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2903
+ontowikikul:Q2903 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q3 ;
+                  rdfs:label "village"@en ,
+                             "wieś"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2904
+ontowikikul:Q2904 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2893 ;
+                  rdfs:label "klasztor - obiekt"@pl ,
+                             "monastery"@en .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2905
+ontowikikul:Q2905 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2894 ;
+                  rdfs:label "chapel"@en ,
+                             "kaplica - obiekt"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2906
+ontowikikul:Q2906 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2895 ;
+                  rdfs:label "kościół filialny"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2907
+ontowikikul:Q2907 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2895 ;
+                  rdfs:label "kościół katedralny"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2908
+ontowikikul:Q2908 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2895 ;
+                  rdfs:label "kościół kolegiacki"@pl .
+
+
+###  https://onto.kul.pl/ontowikikul/Q2909
+ontowikikul:Q2909 rdf:type owl:Class ;
+                  rdfs:subClassOf ontowikikul:Q2895 ;
+                  rdfs:label "kościół szpitalny"@pl .
+
+
 ###  https://onto.kul.pl/ontowikikul/Q3
 ontowikikul:Q3 rdf:type owl:Class ;
                rdfs:comment "proper dwelling"@en ;
