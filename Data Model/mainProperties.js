@@ -385,4 +385,34 @@ export const data =
                 ]
             }
         },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'osada',
+                en: 'settlement'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
+            type: 'item',
+            labels: {
+                pl: 'osada młyńska',
+                en: 'mill settlement'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            },
+            // claims: {
+            //     //subClassOf settlement
+            //     P11: [
+            //         '?',
+            //     ]
+            // }
+        },
     ]
