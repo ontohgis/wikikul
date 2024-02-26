@@ -11,7 +11,7 @@ Wikikul GitHub repository was created to document changes in the https://wiki.ku
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Install](#install)
-- [[Create entities]](#create-entities)
+- [Create entities](#create-entities)
 - [Templates:](#templates)
 - [Learn more:](#learn-more)
 - [See also](#see-also)
@@ -50,7 +50,7 @@ npm install
 And now let's get started!
 
 
-## [Create entities]
+## Create entities
 
 See [Create entities](./create/README.md#create-entities)
 
