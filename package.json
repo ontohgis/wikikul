@@ -1,0 +1,26 @@
+{
+  "name": "WikiKUL",
+  "version": "1.0.0",
+  "description": "A collection of WikiKUL templates",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ontohgis/wikikul.git"
+  },
+  "keywords": [
+    "wikibase-cli",
+    "templates"
+  ],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ontohgis/wikikul/issues"
+  },
+  "homepage": "https://github.com/ontohgis/wikikul#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "wikibase-sdk": "^7.15.0",
+    "wtf_wikipedia": "^8.5.1"
+  }
+}
