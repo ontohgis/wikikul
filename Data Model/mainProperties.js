@@ -111,7 +111,7 @@ export const data =
             //https://dbpedia.org/ontology/denomination
         },
         {
-            id: null,
+            id: 'P24',
             type: 'property',
             datatype: 'globe-coordinate',
             labels: {
