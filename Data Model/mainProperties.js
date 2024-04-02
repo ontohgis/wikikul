@@ -111,6 +111,19 @@ export const data =
             //https://dbpedia.org/ontology/denomination
         },
         {
+            id: null,
+            type: 'property',
+            datatype: 'globe-coordinate',
+            labels: {
+                pl: 'lokalizacja',
+                en: 'location'
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
             id: 'Q1',
             type: 'item',
             labels: {
