@@ -34,7 +34,7 @@ export const data =
             datatype: 'wikibase-item',
             labels: {
                 pl: 'miejsce',
-                en: 'location'
+                en: 'place'
             },
             descriptions: {
                 pl: null,
