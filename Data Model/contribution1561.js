@@ -43,6 +43,24 @@ export const data =
             //http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location; https://www.wikidata.org/wiki/Property:P276
         },
         {
+            id: null,
+            type: 'property',
+            datatype: 'wikibase-item',
+            labels: {
+                pl: 'podatnik',
+                en: null
+            },
+            aliases: {
+                pl: [
+                    'przedmiot opodatkowania',
+                    'przedmiot podatku'
+                ]},
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
             id: 'Q6',
             type: 'item',
             labels: {
