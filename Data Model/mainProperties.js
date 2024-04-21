@@ -124,6 +124,32 @@ export const data =
             }
         },
         {
+            id: null,
+            type: 'property',
+            datatype: 'wikibase-item',
+            labels: {
+                pl: 'źródło',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
+            id: null,
+            type: 'property',
+            datatype: 'url',
+            labels: {
+                pl: 'odnośnik (URL) do źródła',
+                en: null
+            },
+            descriptions: {
+                pl: null,
+                en: null
+            }
+        },
+        {
             id: 'Q1',
             type: 'item',
             labels: {
