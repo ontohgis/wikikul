@@ -47,7 +47,7 @@ export const data =
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
-                pl: 'podatnik',
+                pl: 'podatek od',
                 en: null
             },
             aliases: {
