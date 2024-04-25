@@ -43,7 +43,7 @@ export const data =
             //http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location; https://www.wikidata.org/wiki/Property:P276
         },
         {
-            id: null,
+            id: 'P25',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {

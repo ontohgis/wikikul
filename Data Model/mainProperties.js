@@ -124,7 +124,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'P26',
             type: 'property',
             datatype: 'wikibase-item',
             labels: {
@@ -137,7 +137,7 @@ export const data =
             }
         },
         {
-            id: null,
+            id: 'P27',
             type: 'property',
             datatype: 'url',
             labels: {
