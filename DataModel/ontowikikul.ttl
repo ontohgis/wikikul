@@ -14,6 +14,14 @@
 	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" ;
 	.
 
+ontowikikul:P3
+	a owl:AnnotationProperty ;
+	rdfs:label
+		"deanery (Latin Church)"@en ,
+		"dekanat (Kościół katolicki ob. łacińskiego)"@pl
+		;
+	.
+
 ontowikikul:Q1
 	a owl:Class ;
 	rdfs:label
