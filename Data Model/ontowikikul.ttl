@@ -14,7 +14,7 @@
 	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" ;
 	.
 
-ontowikikul:Q1
+ontowikikul:person
 	a owl:Class ;
 	rdfs:label
 		"Osoba"@pl ,
@@ -28,7 +28,7 @@ ontowikikul:Q1
 		;
 	.
 
-ontowikikul:Q2
+ontowikikul:parish_latin
 	a owl:Class ;
 	rdfs:label
 		"Pfarre"@de ,
@@ -132,7 +132,7 @@ ontowikikul:Q2909
 	rdfs:label "kościół szpitalny"@pl ;
 	.
 
-ontowikikul:Q3
+ontowikikul:proper_dwelling
 	a owl:Class ;
 	rdfs:label "właściwa miejscowość"@pl ;
 	rdfs:comment "proper dwelling"@en ;
@@ -155,7 +155,7 @@ ontowikikul:Q3647
 		;
 	.
 
-ontowikikul:Q4
+ontowikikul:deanery_latin
 	a owl:Class ;
 	rdfs:label
 		"deanery (Latin Church)"@en ,
