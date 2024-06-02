@@ -14,7 +14,7 @@
 	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" ;
 	.
 
-ontowikikul:Q1
+ontowikikul:person
 	a owl:Class ;
 	rdfs:label
 		"Osoba"@pl ,
@@ -28,7 +28,7 @@ ontowikikul:Q1
 		;
 	.
 
-ontowikikul:Q2
+ontowikikul:parish_latin
 	a owl:Class ;
 	rdfs:label
 		"Pfarre"@de ,
@@ -65,7 +65,7 @@ ontowikikul:Q2895
 
 ontowikikul:Q2901
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"demesne"@en ,
 		"folwark"@pl
@@ -74,7 +74,7 @@ ontowikikul:Q2901
 
 ontowikikul:Q2902
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"city / town"@en ,
 		"miasto"@pl
@@ -83,7 +83,7 @@ ontowikikul:Q2902
 
 ontowikikul:Q2903
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"village"@en ,
 		"wieś"@pl
@@ -132,7 +132,7 @@ ontowikikul:Q2909
 	rdfs:label "kościół szpitalny"@pl ;
 	.
 
-ontowikikul:Q3
+ontowikikul:proper_dwelling
 	a owl:Class ;
 	rdfs:label "właściwa miejscowość"@pl ;
 	rdfs:comment "proper dwelling"@en ;
@@ -155,7 +155,7 @@ ontowikikul:Q3647
 		;
 	.
 
-ontowikikul:Q4
+ontowikikul:deanery_latin
 	a owl:Class ;
 	rdfs:label
 		"deanery (Latin Church)"@en ,
