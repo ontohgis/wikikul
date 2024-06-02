@@ -65,7 +65,7 @@ ontowikikul:Q2895
 
 ontowikikul:Q2901
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"demesne"@en ,
 		"folwark"@pl
@@ -74,7 +74,7 @@ ontowikikul:Q2901
 
 ontowikikul:Q2902
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"city / town"@en ,
 		"miasto"@pl
@@ -83,7 +83,7 @@ ontowikikul:Q2902
 
 ontowikikul:Q2903
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3 ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
 		"village"@en ,
 		"wieś"@pl
