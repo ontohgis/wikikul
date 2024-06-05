@@ -39,7 +39,7 @@ ontowikikul:parish_latin
 		;
 	.
 
-ontowikikul:Q2893
+ontowikikul:housing_building
 	a owl:Class ;
 	rdfs:label
 		"budynek mieszkalny"@pl ,
@@ -47,7 +47,7 @@ ontowikikul:Q2893
 		;
 	.
 
-ontowikikul:Q2894
+ontowikikul:building
 	a owl:Class ;
 	rdfs:label
 		"budynek"@pl ,
@@ -55,7 +55,7 @@ ontowikikul:Q2894
 		;
 	.
 
-ontowikikul:Q2895
+ontowikikul:church
 	a owl:Class ;
 	rdfs:label
 		"church"@en ,
@@ -63,7 +63,7 @@ ontowikikul:Q2895
 		;
 	.
 
-ontowikikul:Q2901
+ontowikikul:demesne
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
@@ -72,7 +72,7 @@ ontowikikul:Q2901
 		;
 	.
 
-ontowikikul:Q2902
+ontowikikul:city
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
@@ -81,7 +81,7 @@ ontowikikul:Q2902
 		;
 	.
 
-ontowikikul:Q2903
+ontowikikul:village
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
@@ -90,55 +90,64 @@ ontowikikul:Q2903
 		;
 	.
 
-ontowikikul:Q2904
+ontowikikul:monastery
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2893 ;
+	rdfs:subClassOf ontowikikul:housing_building ;
 	rdfs:label
 		"klasztor - obiekt"@pl ,
 		"monastery"@en
 		;
 	.
 
-ontowikikul:Q2905
+ontowikikul:chapel
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2894 ;
+	rdfs:subClassOf ontowikikul:building ;
 	rdfs:label
 		"chapel"@en ,
 		"kaplica - obiekt"@pl
 		;
 	.
 
-ontowikikul:Q2906
+ontowikikul:filial_church
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2895 ;
-	rdfs:label "kościół filialny"@pl ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label 
+		"kościół filialny"@pl ;
+		"filial church"@en
 	.
 
-ontowikikul:Q2907
+ontowikikul:cathedral_church
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2895 ;
-	rdfs:label "kościół katedralny"@pl ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label 
+		"kościół katedralny"@pl ;
+		"cathedral church"@en
 	.
 
-ontowikikul:Q2908
+ontowikikul:collegiate_church
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2895 ;
-	rdfs:label "kościół kolegiacki"@pl ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label 
+		"kościół kolegiacki"@pl ;
+		"collegiate church"@en
 	.
 
-ontowikikul:Q2909
+ontowikikul:hospital_church
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q2895 ;
-	rdfs:label "kościół szpitalny"@pl ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label 
+		"kościół szpitalny"@pl ;
+		"hospital church"@en
 	.
 
 ontowikikul:proper_dwelling
 	a owl:Class ;
-	rdfs:label "właściwa miejscowość"@pl ;
-	rdfs:comment "proper dwelling"@en ;
+	rdfs:label 
+		"właściwa miejscowość"@pl ;
+		"proper dwelling"@en ;
 	.
 
-ontowikikul:Q3646
+ontowikikul:settlement
 	a owl:Class ;
 	rdfs:label
 		"osada"@pl ,
@@ -146,9 +155,9 @@ ontowikikul:Q3646
 		;
 	.
 
-ontowikikul:Q3647
+ontowikikul:mill_settlement
 	a owl:Class ;
-	rdfs:subClassOf ontowikikul:Q3646 ;
+	rdfs:subClassOf ontowikikul:settlement ;
 	rdfs:label
 		"mill settlement"@en ,
 		"osada młyńska"@pl
@@ -164,7 +173,7 @@ ontowikikul:deanery_latin
 		;
 	.
 
-ontowikikul:Q5
+ontowikikul:diocese_latin
 	a owl:Class ;
 	rdfs:label
 		"Diözese"@de ,
@@ -174,7 +183,7 @@ ontowikikul:Q5
 		;
 	.
 
-ontowikikul:Q6
+ontowikikul:institution
 	a owl:Class ;
 	rdfs:label
 		"institution"@en ,
