@@ -112,39 +112,44 @@ ontowikikul:filial_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label 
-		"kościół filialny"@pl ;
+		"kościół filialny"@pl ,
 		"filial church"@en
+		;
 	.
 
 ontowikikul:cathedral_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label 
-		"kościół katedralny"@pl ;
+		"kościół katedralny"@pl ,
 		"cathedral church"@en
+		;
 	.
 
 ontowikikul:collegiate_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label 
-		"kościół kolegiacki"@pl ;
+		"kościół kolegiacki"@pl ,
 		"collegiate church"@en
+		;
 	.
 
 ontowikikul:hospital_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label 
-		"kościół szpitalny"@pl ;
+		"kościół szpitalny"@pl ,
 		"hospital church"@en
+		;
 	.
 
 ontowikikul:proper_dwelling
 	a owl:Class ;
 	rdfs:label 
-		"właściwa miejscowość"@pl ;
-		"proper dwelling"@en ;
+		"właściwa miejscowość"@pl ,
+		"proper dwelling"@en
+		;
 	.
 
 ontowikikul:settlement
