@@ -58,6 +58,13 @@ See [Create entities](./create/README.md#create-entities)
 ## Templates:
 * [templates to create entities](https://github.com/ontohgis/wikikul/tree/main/create)
 
+## Serialization:
+To keep the syntax consistency of the `ontowikikul.ttl` file, run the serialization script:
+```
+./lib/rdf-toolkit.sh
+```
+
+on windows, double-click the [lib/rdf-toolkit.bat](./lib/rdf-toolkit.bat) script
 
 ## Learn more:
 * [`wb create-entity`](https://github.com/maxlath/wikibase-cli/blob/main/docs/write_operations.md#wb-create-entity)

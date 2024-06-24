@@ -1,0 +1,198 @@
+# baseURI: https://onto.kul.pl/ontowikikul/
+
+@base <https://onto.kul.pl/ontowikikul/> .
+@prefix : <https://onto.kul.pl/ontowikikul/> .
+@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://onto.kul.pl/ontowikikul/>
+	a owl:Ontology ;
+	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl" ;
+	.
+
+ontowikikul:building
+	a owl:Class ;
+	rdfs:label
+		"budynek"@pl ,
+		"building"@en
+		;
+	.
+
+ontowikikul:cathedral_church
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label
+		"cathedral church"@en ,
+		"kościół katedralny"@pl
+		;
+	.
+
+ontowikikul:chapel
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:building ;
+	rdfs:label
+		"chapel"@en ,
+		"kaplica - obiekt"@pl
+		;
+	.
+
+ontowikikul:church
+	a owl:Class ;
+	rdfs:label
+		"church"@en ,
+		"kościół - obiekt"@pl
+		;
+	.
+
+ontowikikul:city
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
+	rdfs:label
+		"city / town"@en ,
+		"miasto"@pl
+		;
+	.
+
+ontowikikul:collegiate_church
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label
+		"collegiate church"@en ,
+		"kościół kolegiacki"@pl
+		;
+	.
+
+ontowikikul:deanery_latin
+	a owl:Class ;
+	rdfs:label
+		"deanery (Latin Church)"@en ,
+		"decanatus"@la ,
+		"dekanat (Kościół katolicki ob. łacińskiego)"@pl
+		;
+	.
+
+ontowikikul:demesne
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
+	rdfs:label
+		"demesne"@en ,
+		"folwark"@pl
+		;
+	.
+
+ontowikikul:diocese_latin
+	a owl:Class ;
+	rdfs:label
+		"Diözese"@de ,
+		"diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
+		"diocese (Latin Church)"@en ,
+		"dioecesis"@la
+		;
+	.
+
+ontowikikul:filial_church
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label
+		"filial church"@en ,
+		"kościół filialny"@pl
+		;
+	.
+
+ontowikikul:hospital_church
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:church ;
+	rdfs:label
+		"hospital church"@en ,
+		"kościół szpitalny"@pl
+		;
+	.
+
+ontowikikul:housing_building
+	a owl:Class ;
+	rdfs:label
+		"budynek mieszkalny"@pl ,
+		"housing building"@en
+		;
+	.
+
+ontowikikul:institution
+	a owl:Class ;
+	rdfs:label
+		"institution"@en ,
+		"instytucja"@pl
+		;
+	.
+
+ontowikikul:mill_settlement
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:settlement ;
+	rdfs:label
+		"mill settlement"@en ,
+		"osada młyńska"@pl
+		;
+	.
+
+ontowikikul:monastery
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:housing_building ;
+	rdfs:label
+		"klasztor - obiekt"@pl ,
+		"monastery"@en
+		;
+	.
+
+ontowikikul:parish_latin
+	a owl:Class ;
+	rdfs:label
+		"Pfarre"@de ,
+		"parafia (Kościół katolicki ob. łacińskiego)"@pl ,
+		"parish (Latin Church)"@en ,
+		"parochia"@la ,
+		"парафия"@ru
+		;
+	.
+
+ontowikikul:person
+	a owl:Class ;
+	rdfs:label
+		"Osoba"@pl ,
+		"Person"@de ,
+		"Person"@en ,
+		"Personne"@fr ,
+		"Pessoa"@pt ,
+		"Πρόσωπο"@el ,
+		"Личность"@ru ,
+		"人物"@zh
+		;
+	.
+
+ontowikikul:proper_dwelling
+	a owl:Class ;
+	rdfs:label
+		"proper dwelling"@en ,
+		"właściwa miejscowość"@pl
+		;
+	.
+
+ontowikikul:settlement
+	a owl:Class ;
+	rdfs:label
+		"osada"@pl ,
+		"settlement"@en
+		;
+	.
+
+ontowikikul:village
+	a owl:Class ;
+	rdfs:subClassOf ontowikikul:proper_dwelling ;
+	rdfs:label
+		"village"@en ,
+		"wieś"@pl
+		;
+	.
+
