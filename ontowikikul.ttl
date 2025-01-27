@@ -19,402 +19,402 @@
 <https://onto.kul.pl/ontowikikul/>
 	a owl:Ontology ;
 	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl"@pl ;
-.
+	.
 
 wikibase:Reference
 	a owl:Class ;
-.
+	.
 
 owl:NamedIndiviual
 	a owl:Class ;
-.
+	.
 
 skos:altLabel
 	a owl:AnnotationProperty ;
-.
+	.
 
 prov:wasDerivedFrom
 	a owl:AnnotationProperty ;
 	rdfs:domain owl:Axiom ;
 	rdfs:range wikibase:Reference ;
-.
+	.
 
 ontowikikul:access_date
 	a owl:AnnotationProperty ;
 	rdfs:label
-	  "access date"@en ,
-	  "data dostępu"@pl
+		"access date"@en ,
+		"data dostępu"@pl
 		;
 	skos:altLabel
-	  "generated at time"@en ,
-	  "retrieved"@en
+		"generated at time"@en ,
+		"retrieved"@en
 		;
 	ontowikikul:is_defined_by_URL <https://www.w3.org/TR/2013/REC-prov-o-20130430/#generatedAtTime> ;
 	schema:description
-			"access date of the resource"@en ,
-			"data dostępu do zasobu"@pl
+		"access date of the resource"@en ,
+		"data dostępu do zasobu"@pl
 		;
-.
+	.
 
 ontowikikul:book
 	a owl:Class ;
 	rdfs:label
-	  "book"@en ,
-	  "książka"@pl
+		"book"@en ,
+		"książka"@pl
 		;
 	schema:description "a book"@en ;
-.
+	.
 
 ontowikikul:building
 	a owl:Class ;
 	rdfs:label
-	  "budynek"@pl ,
-	  "building"@en
+		"budynek"@pl ,
+		"building"@en
 		;
-.
+	.
 
 ontowikikul:cathedral_chapter
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:institution ;
 	rdfs:label
-			"cathedral chapter"@en ,
-			"kapituła katedralna"@pl
+		"cathedral chapter"@en ,
+		"kapituła katedralna"@pl
 		;
 	rdfs:comment "In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead" ;
 	skos:altLabel
-			"chapter"@en ,
-			"college of canons and prelates"@en ,
-			"kapituła"@pl ,
-			"kolegium kanoników i prałatów"@pl
+		"chapter"@en ,
+		"college of canons and prelates"@en ,
+		"kapituła"@pl ,
+		"kolegium kanoników i prałatów"@pl
 		;
 	ontowikikul:is_defined_by_string
-			"college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop" ,
-			"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"
+		"college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop" ,
+		"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"
 		;
 	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
 	ontowikikul:stated_in_item ontowikikul:encyklopedia_katolicka ;
 	schema:description
-			"a college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop."@en ,
-			"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"@pl
+		"a college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop."@en ,
+		"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"@pl
 		;
-.
+	.
 
 ontowikikul:cathedral_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label
-			"cathedral church"@en ,
-			"kościół katedralny"@pl
+		"cathedral church"@en ,
+		"kościół katedralny"@pl
 		;
-.
+	.
 
 ontowikikul:church
 	a owl:Class ;
 	rdfs:label
-	  "church"@en ,
-	  "kościół - obiekt"@pl
+		"church"@en ,
+		"kościół - obiekt"@pl
 		;
-.
+	.
 
 ontowikikul:city
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
-			"city / town"@en ,
-			"miasto"@pl
+		"city / town"@en ,
+		"miasto"@pl
 		;
-.
+	.
 
 ontowikikul:collegiate_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label
-			"collegiate church"@en ,
-			"kościół kolegiacki"@pl
+		"collegiate church"@en ,
+		"kościół kolegiacki"@pl
 		;
-.
+	.
 
 ontowikikul:deanery_latin
 	a owl:Class ;
 	rdfs:label
-	  "deanery (Latin Church)"@en ,
-	  "decanatus"@la ,
-	  "dekanat (Kościół katolicki ob. łacińskiego)"@pl
+		"deanery (Latin Church)"@en ,
+		"decanatus"@la ,
+		"dekanat (Kościół katolicki ob. łacińskiego)"@pl
 		;
-.
+	.
 
 ontowikikul:demesne
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
-			"demesne"@en ,
-			"folwark"@pl
+		"demesne"@en ,
+		"folwark"@pl
 		;
-.
+	.
 
 ontowikikul:diocese
 	a owl:Class ;
 	rdfs:label
-	  "Diözese"@de ,
-	  "diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
-	  "diocese (Latin Church)"@en ,
-	  "dioecesis"@la
+		"Diözese"@de ,
+		"diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
+		"diocese (Latin Church)"@en ,
+		"dioecesis"@la
 		;
-.
+	.
 
 ontowikikul:encyklopedia_katolicka
 	a
-			owl:NamedIndividual ,
-			ontowikikul:book
+		owl:NamedIndividual ,
+		ontowikikul:book
 		;
 	rdfs:label
-			"Encyklopedia katolicka"@en ,
-			"Encyklopedia katolicka"@pl
+		"Encyklopedia katolicka"@en ,
+		"Encyklopedia katolicka"@pl
 		;
-.
+	.
 
 ontowikikul:filial_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label
-			"filial church"@en ,
-			"kościół filialny"@pl
+		"filial church"@en ,
+		"kościół filialny"@pl
 		;
-.
+	.
 
 ontowikikul:hospital_church
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:church ;
 	rdfs:label
-			"collegiate church"@en ,
-			"kościół szpitalny"@pl
+		"collegiate church"@en ,
+		"kościół szpitalny"@pl
 		;
-.
+	.
 
 ontowikikul:housing_building
 	a owl:Class ;
 	rdfs:label
-	  "budynek mieszkalny"@pl ,
-	  "housing building"@en
+		"budynek mieszkalny"@pl ,
+		"housing building"@en
 		;
-.
+	.
 
 ontowikikul:institution
 	a owl:Class ;
 	rdfs:label
-	  "institution"@en ,
-	  "instytucja"@pl
+		"institution"@en ,
+		"instytucja"@pl
 		;
-.
+	.
 
 ontowikikul:is_defined_by_URL
 	a owl:AnnotationProperty ;
 	rdfs:subPropertyOf rdfs:isDefinedBy ;
 	rdfs:label
-			"is defined by URL"@en ,
-			"zdefiniowano przez URL"@pl
+		"is defined by URL"@en ,
+		"zdefiniowano przez URL"@pl
 		;
 	skos:altLabel
-			"rdfs:isDefinedBy"@en ,
-			"rdfs:isDefinedBy"@pl
+		"rdfs:isDefinedBy"@en ,
+		"rdfs:isDefinedBy"@pl
 		;
 	schema:description
-			"podstawa definicji przedmiotu w internecie"@pl ,
-			"the defininition of the subject resource in URL"@en
+		"podstawa definicji przedmiotu w internecie"@pl ,
+		"the defininition of the subject resource in URL"@en
 		;
-.
+	.
 
 ontowikikul:is_defined_by_item
 	a owl:AnnotationProperty ;
 	rdfs:subPropertyOf rdfs:isDefinedBy ;
 	rdfs:label
-			"is defined by item"@en ,
-			"zdefiniowano przez element"@pl
+		"is defined by item"@en ,
+		"zdefiniowano przez element"@pl
 		;
 	skos:altLabel
-			"rdfs:isDefinedBy"@en ,
-			"rdfs:isDefinedBy"@pl
+		"rdfs:isDefinedBy"@en ,
+		"rdfs:isDefinedBy"@pl
 		;
 	schema:description
-			"definicja przedmiotu w elemencie"@pl ,
-			"the defininition of the subject in element"@en
+		"definicja przedmiotu w elemencie"@pl ,
+		"the defininition of the subject in element"@en
 		;
-.
+	.
 
 ontowikikul:is_defined_by_string
 	a owl:AnnotationProperty ;
 	rdfs:subPropertyOf rdfs:isDefinedBy ;
 	rdfs:label
-			"is defined by string"@en ,
-			"zdefiniowano przez tekst"@pl
+		"is defined by string"@en ,
+		"zdefiniowano przez tekst"@pl
 		;
 	skos:altLabel
-			"rdfs:isDefinedBy"@en ,
-			"rdfs:isDefinedBy"@pl
+		"rdfs:isDefinedBy"@en ,
+		"rdfs:isDefinedBy"@pl
 		;
 	schema:description
-			"definicja przedmiotu w tekście"@pl ,
-			"the definition of the subject in string"@en
+		"definicja przedmiotu w tekście"@pl ,
+		"the definition of the subject in string"@en
 		;
-.
+	.
 
 ontowikikul:language
 	a owl:AnnotationProperty ;
 	rdfs:label
-	  "język"@pl ,
-	  "language"@en
+		"język"@pl ,
+		"language"@en
 		;
 	schema:description
-	  "język atrybutu podany w systemie ISO 639-1:2002"@pl ,
-	  "the attribute language given in the ISO 639-1:2002 system"@en
+		"język atrybutu podany w systemie ISO 639-1:2002"@pl ,
+		"the attribute language given in the ISO 639-1:2002 system"@en
 		;
-.
+	.
 
 ontowikikul:mill_settlement
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:settlement ;
 	rdfs:label
-			"mill settlement"@en ,
-			"osada młyńska"@pl
+		"mill settlement"@en ,
+		"osada młyńska"@pl
 		;
-.
+	.
 
 ontowikikul:parish_latin
 	a owl:Class ;
 	rdfs:label
-	  "Pfarre"@de ,
-	  "parafia (Kościół katolicki ob. łacińskiego)"@pl ,
-	  "parish (Latin Church)"@en ,
-	  "parochia"@la ,
-	  "парафия"@ru
+		"Pfarre"@de ,
+		"parafia (Kościół katolicki ob. łacińskiego)"@pl ,
+		"parish (Latin Church)"@en ,
+		"parochia"@la ,
+		"парафия"@ru
 		;
-.
+	.
 
 ontowikikul:person
 	a owl:Class ;
 	rdfs:label
-	  "Person"@de ,
-	  "Personne"@fr ,
-	  "Pessoa"@pt ,
-	  "osoba"@pl ,
-	  "person"@en ,
-	  "Πρόσωπο"@el ,
-	  "Личность"@ru ,
-	  "人物"@zh
+		"Person"@de ,
+		"Personne"@fr ,
+		"Pessoa"@pt ,
+		"osoba"@pl ,
+		"person"@en ,
+		"Πρόσωπο"@el ,
+		"Личность"@ru ,
+		"人物"@zh
 		;
 	skos:altLabel
-	  "człowiek"@pl ,
-	  "human"@en
+		"człowiek"@pl ,
+		"human"@en
 		;
-.
+	.
 
 ontowikikul:plwordnet
 	a
-							  owl:NamedIndividual ,
-							  owl:NamedIndiviual
+		owl:NamedIndividual ,
+		owl:NamedIndiviual
 		;
 	rdfs:label
-							  "Słowosieć"@pl ,
-							  "plWordNet"@en
+		"Słowosieć"@pl ,
+		"plWordNet"@en
 		;
 	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/> ;
 	schema:description
-							  "a relational lexico-semantic dictionary which reflects the lexical system of the Polish language"@en ,
-							  "relacyjny słownik semantyczny, który odzwierciedla system leksykalny języka polskiego"@pl
+		"a relational lexico-semantic dictionary which reflects the lexical system of the Polish language"@en ,
+		"relacyjny słownik semantyczny, który odzwierciedla system leksykalny języka polskiego"@pl
 		;
-.
+	.
 
 ontowikikul:proper_dwelling
 	a owl:Class ;
 	rdfs:label
-	  "proper dwelling"@en ,
-	  "właściwa miejscowość"@pl
+		"proper dwelling"@en ,
+		"właściwa miejscowość"@pl
 		;
-.
+	.
 
 ontowikikul:settlement
 	a owl:Class ;
 	rdfs:label
-	  "osada"@pl ,
-	  "settlement"@en
+		"osada"@pl ,
+		"settlement"@en
 		;
-.
+	.
 
 ontowikikul:stated_in_URL
 	a owl:AnnotationProperty ;
 	rdfs:subPropertyOf rdfs:seeAlso ;
 	rdfs:label
-			"stated in URL"@en ,
-			"występuje w URL"@pl
+		"stated in URL"@en ,
+		"występuje w URL"@pl
 		;
 	skos:altLabel
-			"described in URL"@en ,
-			"internet source"@en ,
-			"opisano w internecie"@pl ,
-			"rdfs:seeAlso"@en ,
-			"źródło internetowe"@pl
+		"described in URL"@en ,
+		"internet source"@en ,
+		"opisano w internecie"@pl ,
+		"rdfs:seeAlso"@en ,
+		"źródło internetowe"@pl
 		;
 	schema:description
-			"dalsze informacje na temat danego zasobu w internecie"@pl ,
-			"further information about the subject resource in URL"@en
+		"dalsze informacje na temat danego zasobu w internecie"@pl ,
+		"further information about the subject resource in URL"@en
 		;
-.
+	.
 
 ontowikikul:stated_in_item
 	a owl:AnnotationProperty ;
 	rdfs:subPropertyOf rdfs:seeAlso ;
 	rdfs:label
-			"stated in item"@en ,
-			"występuje w elemencie"@pl
+		"stated in item"@en ,
+		"występuje w elemencie"@pl
 		;
 	skos:altLabel
-			"described by item"@en ,
-			"opisano w elemencie"@pl ,
-			"rdfs:seeAlso"@en ,
-			"source"@en ,
-			"źródło"@pl
+		"described by item"@en ,
+		"opisano w elemencie"@pl ,
+		"rdfs:seeAlso"@en ,
+		"source"@en ,
+		"źródło"@pl
 		;
 	schema:description
-			"dalsze informacje na temat danego zasobu w elemencie"@pl ,
-			"further information about the subject resource in item"@en
+		"dalsze informacje na temat danego zasobu w elemencie"@pl ,
+		"further information about the subject resource in item"@en
 		;
-.
+	.
 
 ontowikikul:village
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
 	rdfs:label
-			"village"@en ,
-			"wieś"@pl
+		"village"@en ,
+		"wieś"@pl
 		;
-.
+	.
 
 ontowikikul:volume
 	a owl:AnnotationProperty ;
 	rdfs:label
-	  "tom"@pl ,
-	  "volume"@en
+		"tom"@pl ,
+		"volume"@en
 		;
 	schema:description
-	  "numer tomu"@pl ,
-	  "volume number"@en
+		"numer tomu"@pl ,
+		"volume number"@en
 		;
-.
+	.
 
 ontowikikul:wojciech_goralski
 	a
-			owl:NamedIndividual ,
-			ontowikikul:person
+		owl:NamedIndividual ,
+		ontowikikul:person
 		;
 	rdfs:label
-			"Wojciech Góralski"@en ,
-			"Wojciech Góralski"@pl
+		"Wojciech Góralski"@en ,
+		"Wojciech Góralski"@pl
 		;
-.
+	.
 
 schema:description
 	a owl:AnnotationProperty ;
-.
+	.
 
 []
 	a owl:Axiom ;
@@ -423,7 +423,7 @@ schema:description
 	owl:annotatedTarget "In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead" ;
 	ontowikikul:access_date "2024-10-24T00:00:00Z"^^xsd:dateTime ;
 	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
-.
+	.
 
 []
 	a owl:Axiom ;
@@ -431,7 +431,7 @@ schema:description
 	owl:annotatedSource ontowikikul:cathedral_chapter ;
 	owl:annotatedTarget "college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop" ;
 	ontowikikul:language "en" ;
-.
+	.
 
 []
 	a owl:Axiom ;
@@ -439,7 +439,7 @@ schema:description
 	owl:annotatedSource ontowikikul:cathedral_chapter ;
 	owl:annotatedTarget "kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego" ;
 	ontowikikul:language "pl" ;
-.
+	.
 
 []
 	a owl:Axiom ;
@@ -447,7 +447,7 @@ schema:description
 	owl:annotatedSource ontowikikul:cathedral_chapter ;
 	owl:annotatedTarget <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
 	ontowikikul:access_date "2024-10-28T00:00:00Z"^^xsd:dateTime ;
-.
+	.
 
 []
 	a owl:Axiom ;
@@ -455,5 +455,5 @@ schema:description
 	owl:annotatedSource ontowikikul:cathedral_chapter ;
 	owl:annotatedTarget ontowikikul:encyklopedia_katolicka ;
 	ontowikikul:volume "5" ;
-.
+	.
 
