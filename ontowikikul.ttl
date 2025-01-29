@@ -380,6 +380,17 @@ ontowikikul:stated_in_item
 		;
 	.
 
+ontowikikul:tax_on
+	a owl:AnnotationProperty ;
+	rdfs:label
+	  "podatek od"@pl ,
+	  "tax on"@en
+		;
+	schema:description
+	  "przedmiot opodatkowania; przedmiot podatku"@pl
+		;
+.
+
 ontowikikul:village
 	a owl:Class ;
 	rdfs:subClassOf ontowikikul:proper_dwelling ;
