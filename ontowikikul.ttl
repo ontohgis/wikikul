@@ -457,3 +457,15 @@ schema:description
 	ontowikikul:volume "5" ;
 	.
 
+ontowikikul:pages
+	a owl:AnnotationProperty ;
+	rdfs:label
+		"strony"@pl ,
+		"pages"@en
+		;
+	rdfs:range xsd:string ;
+	schema:description
+		"numer strony lub zakres stron w źródle"@pl ,
+		"page number or range of pages in the source"@en
+		;
+	.
