@@ -279,6 +279,19 @@ ontowikikul:mill_settlement
 		;
 	.
 
+ontowikikul:pages
+	a owl:AnnotationProperty ;
+	rdfs:label
+		"pages"@en ,
+		"strony"@pl
+		;
+	rdfs:range xsd:string ;
+	schema:description
+		"numer strony lub zakres stron w źródle"@pl ,
+		"page number or range of pages in the source"@en
+		;
+	.
+
 ontowikikul:parish_latin
 	a owl:Class ;
 	rdfs:label
@@ -457,15 +470,3 @@ schema:description
 	ontowikikul:volume "5" ;
 	.
 
-ontowikikul:pages
-	a owl:AnnotationProperty ;
-	rdfs:label
-		"strony"@pl ,
-		"pages"@en
-		;
-	rdfs:range xsd:string ;
-	schema:description
-		"numer strony lub zakres stron w źródle"@pl ,
-		"page number or range of pages in the source"@en
-		;
-	.
