@@ -285,7 +285,6 @@ ontowikikul:pages
 		"pages"@en ,
 		"strony"@pl
 		;
-	rdfs:range rdfs:Literal ;
 	schema:description
 		"numer strony lub zakres stron w źródle"@pl ,
 		"page number or range of pages in the source"@en
