@@ -386,7 +386,10 @@ ontowikikul:tax_on
 		"podatek od"@pl ,
 		"tax on"@en
 		;
-	rdfs:range ontowikikul:institution ;
+	skos:altLabel
+		"przedmiot opodatkowania"@pl ,
+		"przedmiot podatku"@pl
+		;
 	schema:description "przedmiot opodatkowania; przedmiot podatku"@pl ;
 	.
 
