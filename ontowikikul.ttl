@@ -1,459 +1,1802 @@
-# baseURI: https://onto.kul.pl/ontowikikul/
-
-@base <https://onto.kul.pl/ontowikikul/> .
-@prefix : <https://onto.kul.pl/ontowikikul/> .
-@prefix dbpedia: <https://dbpedia.org/ontology/> .
-@prefix ontohgis: <https://onto.kul.pl/ontohgis/> .
-@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix wikibase: <http://wikiba.se/ontology#> .
-@prefix wikidata: <http://www.wikidata.org/entity/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix ontohgis: <https://onto.kul.pl/ontohgis/> .
+@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbpedia: <https://dbpedia.org/ontology/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <https://onto.kul.pl/ontowikikul/> .
 
 <https://onto.kul.pl/ontowikikul/>
-	a owl:Ontology ;
-	rdfs:comment "Ontologia dla modelu danych wiki.kul.pl"@pl ;
-	.
+ a owl:Ontology ;
+ rdfs:comment "Ontologia dla modelu danych wiki.kul.pl"@pl ;
+ .
 
-wikibase:Reference
-	a owl:Class ;
-	.
+schema:description rdf:type owl:AnnotationProperty .
 
-owl:NamedIndiviual
-	a owl:Class ;
-	.
+wikibase:Reference rdf:type owl:Class .
 
-skos:altLabel
-	a owl:AnnotationProperty ;
-	.
+skos:altLabel rdf:type owl:AnnotationProperty .
 
-prov:wasDerivedFrom
-	a owl:AnnotationProperty ;
-	rdfs:domain owl:Axiom ;
-	rdfs:range wikibase:Reference ;
-	.
+prov:wasDerivedFrom rdf:type owl:AnnotationProperty ;
+ rdfs:domain owl:Axiom ;
+ rdfs:range wikibase:Reference .
 
-ontowikikul:access_date
-	a owl:AnnotationProperty ;
-	rdfs:label
-		"access date"@en ,
-		"data dostępu"@pl
-		;
-	skos:altLabel
-		"generated at time"@en ,
-		"retrieved"@en
-		;
-	ontowikikul:is_defined_by_URL <https://www.w3.org/TR/2013/REC-prov-o-20130430/#generatedAtTime> ;
-	schema:description
-		"access date of the resource"@en ,
-		"data dostępu do zasobu"@pl
-		;
-	.
+ontowikikul:type
+ a rdf:Property
+  ;
+ rdfs:label
+  """typ"""@pl ,
+  """type"""@en
+  ;
+ schema:description
+  """obiekt (podmiot) jest instancją klasy; określa przynależność obiektu (jednostki, indywiduum) do klasy (typu, kategorii), np. 'parafia w Krężnicy Jarej' należy do 'klasy' 'parafia'"""@pl ,
+  """the subject is an instance of a class; defines the belonging of an object (unit, individual) to a type (class, category), e.g. 'parish in Krężnica Jara' belongs to the 'type' 'parish'."""@en
+  ;
+ skos:altLabel
+  """instance of"""@en ,
+  """jest to"""@pl
+  ;
+ owl:sameAs rdf:type
+ .
 
-ontowikikul:book
-	a owl:Class ;
-	rdfs:label
-		"book"@en ,
-		"książka"@pl
-		;
-	schema:description "a book"@en ;
-	.
+ontowikikul:deanery_latin_church
+ a rdf:Property
+  ;
+ rdfs:label
+  """dekanat (Kościół katolicki ob. łacińskiego)"""@pl ,
+  """deanery (Latin Church)"""@en
+  ;
+ schema:description
+  """jednostka terytorialna i administracyjna Kościoła łacińskiego, do której należy opisywany obiekt; nadrzędna w stosunku do parafii, podrzędna w stosunku do archidiakonatu lub diecezji"""@pl ,
+  """territorial and administrative unit of the Latin Church to which the item being described belongs; superior to the parish, subordinate to the archdeaconry or diocese"""@en
+ .
 
-ontowikikul:building
-	a owl:Class ;
-	rdfs:label
-		"budynek"@pl ,
-		"building"@en
-		;
-	.
+ontowikikul:diocese_latin_church
+ a rdf:Property
+  ;
+ rdfs:label
+  """diecezja (Kościół katolicki ob. łacińskiego)"""@pl ,
+  """diocese (Latin Chruch)"""@en
+ .
 
-ontowikikul:cathedral_chapter
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:institution ;
-	rdfs:label
-		"cathedral chapter"@en ,
-		"kapituła katedralna"@pl
-		;
-	rdfs:comment "In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead" ;
-	skos:altLabel
-		"chapter"@en ,
-		"college of canons and prelates"@en ,
-		"kapituła"@pl ,
-		"kolegium kanoników i prałatów"@pl
-		;
-	ontowikikul:is_defined_by_string
-		"college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop" ,
-		"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"
-		;
-	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
-	ontowikikul:stated_in_item ontowikikul:encyklopedia_katolicka ;
-	schema:description
-		"a college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop."@en ,
-		"kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"@pl
-		;
-	.
-
-ontowikikul:cathedral_church
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:church ;
-	rdfs:label
-		"cathedral church"@en ,
-		"kościół katedralny"@pl
-		;
-	.
-
-ontowikikul:church
-	a owl:Class ;
-	rdfs:label
-		"church"@en ,
-		"kościół - obiekt"@pl
-		;
-	.
-
-ontowikikul:city
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:proper_dwelling ;
-	rdfs:label
-		"city / town"@en ,
-		"miasto"@pl
-		;
-	.
-
-ontowikikul:collegiate_church
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:church ;
-	rdfs:label
-		"collegiate church"@en ,
-		"kościół kolegiacki"@pl
-		;
-	.
-
-ontowikikul:deanery_latin
-	a owl:Class ;
-	rdfs:label
-		"deanery (Latin Church)"@en ,
-		"decanatus"@la ,
-		"dekanat (Kościół katolicki ob. łacińskiego)"@pl
-		;
-	.
-
-ontowikikul:demesne
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:proper_dwelling ;
-	rdfs:label
-		"demesne"@en ,
-		"folwark"@pl
-		;
-	.
-
-ontowikikul:diocese
-	a owl:Class ;
-	rdfs:label
-		"Diözese"@de ,
-		"diecezja (Kościół katolicki ob. łacińskiego)"@pl ,
-		"diocese (Latin Church)"@en ,
-		"dioecesis"@la
-		;
-	.
-
-ontowikikul:encyklopedia_katolicka
-	a
-		owl:NamedIndividual ,
-		ontowikikul:book
-		;
-	rdfs:label
-		"Encyklopedia katolicka"@en ,
-		"Encyklopedia katolicka"@pl
-		;
-	.
-
-ontowikikul:filial_church
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:church ;
-	rdfs:label
-		"filial church"@en ,
-		"kościół filialny"@pl
-		;
-	.
-
-ontowikikul:hospital_church
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:church ;
-	rdfs:label
-		"collegiate church"@en ,
-		"kościół szpitalny"@pl
-		;
-	.
-
-ontowikikul:housing_building
-	a owl:Class ;
-	rdfs:label
-		"budynek mieszkalny"@pl ,
-		"housing building"@en
-		;
-	.
-
-ontowikikul:institution
-	a owl:Class ;
-	rdfs:label
-		"institution"@en ,
-		"instytucja"@pl
-		;
-	.
-
-ontowikikul:is_defined_by_URL
-	a owl:AnnotationProperty ;
-	rdfs:subPropertyOf rdfs:isDefinedBy ;
-	rdfs:label
-		"is defined by URL"@en ,
-		"zdefiniowano przez URL"@pl
-		;
-	skos:altLabel
-		"rdfs:isDefinedBy"@en ,
-		"rdfs:isDefinedBy"@pl
-		;
-	schema:description
-		"podstawa definicji przedmiotu w internecie"@pl ,
-		"the defininition of the subject resource in URL"@en
-		;
-	.
-
-ontowikikul:is_defined_by_item
-	a owl:AnnotationProperty ;
-	rdfs:subPropertyOf rdfs:isDefinedBy ;
-	rdfs:label
-		"is defined by item"@en ,
-		"zdefiniowano przez element"@pl
-		;
-	skos:altLabel
-		"rdfs:isDefinedBy"@en ,
-		"rdfs:isDefinedBy"@pl
-		;
-	schema:description
-		"definicja przedmiotu w elemencie"@pl ,
-		"the defininition of the subject in element"@en
-		;
-	.
-
-ontowikikul:is_defined_by_string
-	a owl:AnnotationProperty ;
-	rdfs:subPropertyOf rdfs:isDefinedBy ;
-	rdfs:label
-		"is defined by string"@en ,
-		"zdefiniowano przez tekst"@pl
-		;
-	skos:altLabel
-		"rdfs:isDefinedBy"@en ,
-		"rdfs:isDefinedBy"@pl
-		;
-	schema:description
-		"definicja przedmiotu w tekście"@pl ,
-		"the definition of the subject in string"@en
-		;
-	.
-
-ontowikikul:language
-	a owl:AnnotationProperty ;
-	rdfs:label
-		"język"@pl ,
-		"language"@en
-		;
-	schema:description
-		"język atrybutu podany w systemie ISO 639-1:2002"@pl ,
-		"the attribute language given in the ISO 639-1:2002 system"@en
-		;
-	.
-
-ontowikikul:mill_settlement
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:settlement ;
-	rdfs:label
-		"mill settlement"@en ,
-		"osada młyńska"@pl
-		;
-	.
-
-ontowikikul:parish_latin
-	a owl:Class ;
-	rdfs:label
-		"Pfarre"@de ,
-		"parafia (Kościół katolicki ob. łacińskiego)"@pl ,
-		"parish (Latin Church)"@en ,
-		"parochia"@la ,
-		"парафия"@ru
-		;
-	.
+ontowikikul:date_string
+ a rdf:Property
+  ;
+ rdfs:label
+  """data-string"""@pl ,
+  """date-string"""@en
+  ;
+ schema:description
+  """used to express temporal information at any level of granularity; recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF]"""@en ,
+  """używana do wyrażania informacji czasowych na dowolnym poziomie szczegółowości; zalecaną najlepszą praktyką jest stosowanie schematu kodowania, takiego jak profil W3CDTF ISO 8601 [W3CDTF]."""@pl
+  ;
+ skos:altLabel
+  """dcterms:date"""@en ,
+  """dcterms:date"""@pl
+ .
 
 ontowikikul:person
-	a owl:Class ;
-	rdfs:label
-		"Person"@de ,
-		"Personne"@fr ,
-		"Pessoa"@pt ,
-		"osoba"@pl ,
-		"person"@en ,
-		"Πρόσωπο"@el ,
-		"Личность"@ru ,
-		"人物"@zh
-		;
-	skos:altLabel
-		"człowiek"@pl ,
-		"human"@en
-		;
-	.
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """osoba"""@pl ,
+  """Person"""@de ,
+  """person"""@en ,
+  """Personne"""@fr ,
+  """Pessoa"""@pt ,
+  """Πρόσωπο"""@el ,
+  """Личность"""@ru ,
+  """人物"""@zh
+  ;
+ skos:altLabel
+  """human"""@en ,
+  """człowiek"""@pl
+ .
 
-ontowikikul:plwordnet
-	a
-		owl:NamedIndividual ,
-		owl:NamedIndiviual
-		;
-	rdfs:label
-		"Słowosieć"@pl ,
-		"plWordNet"@en
-		;
-	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/> ;
-	schema:description
-		"a relational lexico-semantic dictionary which reflects the lexical system of the Polish language"@en ,
-		"relacyjny słownik semantyczny, który odzwierciedla system leksykalny języka polskiego"@pl
-		;
-	.
+ontowikikul:parish_latin
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """parafia (Kościół katolicki ob. łacińskiego)"""@pl ,
+  """parish (Latin Church)"""@en ,
+  """Pfarre"""@de ,
+  """parochia"""@la ,
+  """парафия"""@ru
+  ;
+ owl:sameAs ontohgis:administrative_type_144
+ .
 
 ontowikikul:proper_dwelling
-	a owl:Class ;
-	rdfs:label
-		"proper dwelling"@en ,
-		"właściwa miejscowość"@pl
-		;
-	.
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """właściwa miejscowość"""@pl ,
+  """proper dwelling"""@en
+  ;
+ owl:sameAs ontohgis:settlement_type_1000
+ .
 
-ontowikikul:settlement
-	a owl:Class ;
-	rdfs:label
-		"osada"@pl ,
-		"settlement"@en
-		;
-	.
+ontowikikul:deanery_latin
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """dekanat (Kościół katolicki ob. łacińskiego)"""@pl ,
+  """deanery (Latin Church)"""@en ,
+  """decanatus"""@la
+  ;
+ owl:sameAs ontohgis:administrative_type_150
+ .
 
-ontowikikul:stated_in_URL
-	a owl:AnnotationProperty ;
-	rdfs:subPropertyOf rdfs:seeAlso ;
-	rdfs:label
-		"stated in URL"@en ,
-		"występuje w URL"@pl
-		;
-	skos:altLabel
-		"described in URL"@en ,
-		"internet source"@en ,
-		"opisano w internecie"@pl ,
-		"rdfs:seeAlso"@en ,
-		"źródło internetowe"@pl
-		;
-	schema:description
-		"dalsze informacje na temat danego zasobu w internecie"@pl ,
-		"further information about the subject resource in URL"@en
-		;
-	.
+ontowikikul:diocese_latin
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """diecezja (Kościół katolicki ob. łacińskiego)"""@pl ,
+  """diocese (Latin Church)"""@en ,
+  """Diözese"""@de ,
+  """dioecesis"""@la
+ .
 
-ontowikikul:stated_in_item
-	a owl:AnnotationProperty ;
-	rdfs:subPropertyOf rdfs:seeAlso ;
-	rdfs:label
-		"stated in item"@en ,
-		"występuje w elemencie"@pl
-		;
-	skos:altLabel
-		"described by item"@en ,
-		"opisano w elemencie"@pl ,
-		"rdfs:seeAlso"@en ,
-		"source"@en ,
-		"źródło"@pl
-		;
-	schema:description
-		"dalsze informacje na temat danego zasobu w elemencie"@pl ,
-		"further information about the subject resource in item"@en
-		;
-	.
+ontowikikul:denomination
+ a rdf:Property
+  ;
+ rdfs:label
+  """wyznanie"""@pl ,
+  """denomination"""@en
+ .
+
+ontowikikul:taxpayer
+ a rdf:Property
+  ;
+ rdfs:label
+  """płatnik podatku"""@pl ,
+  """taxpayer"""@en
+ .
+
+ontowikikul:is_part_of
+ a rdf:Property
+  ;
+ rdfs:label
+  """część"""@pl ,
+  """is part of"""@en
+  ;
+ schema:description
+  """used to indicate a relationship between an item and a larger item that it is a part of"""@en ,
+  """służy do określenia relacji między danym obiektem a innym obiektem, którego ten pierwszy obiekt jest częścią"""@pl
+  ;
+ owl:sameAs schema:isPartOf
+ .
+
+ontowikikul:place
+ a rdf:Property
+  ;
+ rdfs:label
+  """miejsce"""@pl ,
+  """place"""@en
+  ;
+ schema:description
+  """place where an event is happening, where an organization is located, or where an action takes place"""@en ,
+  """miejsce, w którym odbywa się wydarzenie, w którym znajduje się organizacja lub w którym ma miejsce działanie"""@pl
+  ;
+ skos:altLabel
+  """location"""@en
+  ;
+ owl:sameAs wikidata:P276
+  ;
+ owl:sameAs schema:location
+ .
+
+ontowikikul:institution
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """instytucja"""@pl ,
+  """institution"""@en
+ .
+
+ontowikikul:collegiate_cantors_prebend
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kantoria kolegiacka"""@pl ,
+  """collegiate cantor's prebend"""@en
+ .
+
+ontowikikul:castellany
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kasztelania"""@pl ,
+  """castellany"""@en
+ .
+
+ontowikikul:college_of_collegiate_altarists
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kolegium altarzystów kolegiackich"""@pl ,
+  """college of collegiate altarists"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:college_of_altarists
+ .
+
+ontowikikul:collegiate_canonry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kanonia kolegiacka"""@pl ,
+  """collegiate canonry"""@en
+ .
+
+ontowikikul:altar_benefice
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """altaria"""@pl ,
+  """altar benefice"""@en
+ .
+
+ontowikikul:collegiate_custody
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kustodia kolegiacka"""@pl ,
+  """collegiate custody"""@en
+ .
+
+ontowikikul:cathedral_deanery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """dziekania katedralna"""@pl ,
+  """cathedral deanery"""@en
+ .
+
+ontowikikul:hospital_provostry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prepozytura szpitalna"""@pl ,
+  """hospital provostry"""@en
+ .
+
+ontowikikul:collegiate_provostry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prepozytura kolegiacka"""@pl ,
+  """collegiate provostry"""@en
+ .
+
+ontowikikul:college_of_cathedral_altarists
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kolegium altarzystów katedralnych"""@pl ,
+  """college of cathedral altarists"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:college_of_altarists
+ .
+
+ontowikikul:collegiate_chancery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kancelaria kolegiacka"""@pl ,
+  """collegiate chancery"""@en
+ .
+
+ontowikikul:cathedral_canonry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kanonia katedralna"""@pl ,
+  """cathedral canonry"""@en
+ .
+
+ontowikikul:provostry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prepozytura"""@pl ,
+  """provostry"""@en
+ .
+
+ontowikikul:collegiate_chapter
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kapituła kolegiacka"""@pl ,
+  """collegiate chapter"""@en
+ .
+
+ontowikikul:cathedral_scholastery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """scholasteria katedralna"""@pl ,
+  """cathedral scholastery"""@en
+ .
+
+ontowikikul:college_of_collegiate_mansionaries
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kolegium mansjonarzy kolegiackich"""@pl ,
+  """college of collegiate mansionaries"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:college_of_mansionaries
+ .
+
+ontowikikul:college_of_mansionaries
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kolegium mansjonarzy"""@pl ,
+  """college of mansionaries"""@en
+ .
+
+ontowikikul:collegiate_altar_benefice
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """altaria kolegiacka"""@pl ,
+  """collegiate altar benefice"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:altar_benefice
+ .
+
+ontowikikul:cathedral_chancery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kancelaria katedralna"""@pl ,
+  """cathedral chancery"""@en
+ .
+
+ontowikikul:cathedral_provostry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prepozytura katedralna"""@pl ,
+  """cathedral provostry"""@en
+ .
+
+ontowikikul:cathedral_archdeaconry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """archidiakonat katedralny"""@pl ,
+  """cathedral archdeaconry"""@en
+ .
+
+ontowikikul:mansionary_college
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """mansjonaria"""@pl ,
+  """mansionary college"""@en
+ .
+
+ontowikikul:cathedral_chapter
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kapituła katedralna"""@pl ,
+  """cathedral chapter"""@en
+  ;
+ schema:description
+  """kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego"""@pl ,
+  """a college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop."""@en
+  ;
+ skos:altLabel
+  """chapter"""@en ,
+  """college of canons and prelates"""@en ,
+  """kapituła"""@pl ,
+  """kolegium kanoników i prałatów"""@pl
+  ;
+ ontowikikul:subclass_of ontowikikul:institution
+  ;
+ ontowikikul:is_described_as """In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead"""
+  ;
+ ontowikikul:stated_in_item ontowikikul:encyklopedia_katolicka
+  ;
+ ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45>
+  ;
+ ontowikikul:is_defined_by_string """kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego""" ,
+  """college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop"""
+ .
+
+[  rdf:type owl:Axiom ;
+ owl:annotatedSource ontowikikul:cathedral_chapter ;
+ owl:annotatedProperty ontowikikul:is_described_as ;
+ owl:annotatedTarget """In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead""" ;
+ ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
+ ontowikikul:access_date "2024-10-24T00:00:00Z"^^xsd:dateTime ;
+] .
+
+[  rdf:type owl:Axiom ;
+ owl:annotatedSource ontowikikul:cathedral_chapter ;
+ owl:annotatedProperty ontowikikul:stated_in_item ;
+ owl:annotatedTarget ontowikikul:encyklopedia_katolicka ;
+ ontowikikul:volume """5""" ;
+] .
+
+[  rdf:type owl:Axiom ;
+ owl:annotatedSource ontowikikul:cathedral_chapter ;
+ owl:annotatedProperty ontowikikul:stated_in_URL ;
+ owl:annotatedTarget <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
+ ontowikikul:access_date "2024-10-28T00:00:00Z"^^xsd:dateTime ;
+] .
+
+[  rdf:type owl:Axiom ;
+ owl:annotatedSource ontowikikul:cathedral_chapter ;
+ owl:annotatedProperty ontowikikul:is_defined_by_string ;
+ owl:annotatedTarget """kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego""" ;
+ ontowikikul:language """pl""" ;
+] .
+
+[  rdf:type owl:Axiom ;
+ owl:annotatedSource ontowikikul:cathedral_chapter ;
+ owl:annotatedProperty ontowikikul:is_defined_by_string ;
+ owl:annotatedTarget """college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop""" ;
+ ontowikikul:language """en""" ;
+] .
+
+ontowikikul:collegiate_deanery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """dziekania kolegiacka"""@pl ,
+  """collegiate deanery"""@en
+ .
+
+ontowikikul:abbey
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """opactwo"""@pl ,
+  """abbey"""@en
+ .
+
+ontowikikul:bishopric
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """biskupstwo"""@pl ,
+  """bishopric"""@en
+ .
+
+ontowikikul:organists_prebend
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prebenda organisty"""@pl ,
+  """organist's prebend"""@en
+ .
+
+ontowikikul:parish_benefice
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """plebania"""@pl ,
+  """parish benefice"""@en
+  ;
+ skos:altLabel
+  """urząd plebana"""@pl ,
+  """godność plebana"""@pl ,
+  """beneficjum plebańskie"""@pl
+ .
+
+ontowikikul:cathedral_cantors_prebend
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kantoria katedralna"""@pl ,
+  """cathedral cantor's prebend"""@en
+ .
+
+ontowikikul:college_of_altarists
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kolegium altarzystów"""@pl ,
+  """college of altarists"""@en
+ .
+
+ontowikikul:starosty
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """starostwo"""@pl ,
+  """starosty"""@en
+ .
+
+ontowikikul:cathedral_custody
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kustodia katedralna"""@pl ,
+  """cathedral custody"""@en
+ .
+
+ontowikikul:chaplaincy
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kapelania"""@pl ,
+  """chaplaincy"""@en
+ .
+
+ontowikikul:cathedral_altar_benefice
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """altaria katedralna"""@pl ,
+  """cathedral altar benefice"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:altar_benefice
+ .
+
+ontowikikul:subclass_of
+ a rdf:Property
+  ;
+ rdfs:label
+  """subclass of"""@en ,
+  """podklasa"""@pl
+  ;
+ schema:description
+  """used to indicate that one class is a subclass of another class; this means that every instance of the subclass is also an instance of the main class"""@en ,
+  """służy do wskazania, że jedna klasa jest podklasą innej klasy; oznacza, że każdy obiekt należący do podklasy jest również obiektem należącym do klasy głównej"""@pl
+  ;
+ owl:sameAs rdfs:subClassOf
+ .
+
+ontowikikul:housing_building
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """budynek mieszkalny"""@pl ,
+  """housing building"""@en
+ .
+
+ontowikikul:building
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """budynek"""@pl ,
+  """building"""@en
+ .
+
+ontowikikul:church
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kościół - obiekt"""@pl ,
+  """church"""@en
+ .
+
+ontowikikul:demesne
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """folwark"""@pl ,
+  """demesne"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:proper_dwelling
+ .
+
+ontowikikul:city
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """miasto"""@pl ,
+  """city / town"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:proper_dwelling
+ .
 
 ontowikikul:village
-	a owl:Class ;
-	rdfs:subClassOf ontowikikul:proper_dwelling ;
-	rdfs:label
-		"village"@en ,
-		"wieś"@pl
-		;
-	.
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """wieś"""@pl ,
+  """village"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:proper_dwelling
+  ;
+ owl:sameAs ontohgis:settlement_type_2
+ .
 
-ontowikikul:volume
-	a owl:AnnotationProperty ;
-	rdfs:label
-		"tom"@pl ,
-		"volume"@en
-		;
-	schema:description
-		"numer tomu"@pl ,
-		"volume number"@en
-		;
-	.
+ontowikikul:monastery
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """klasztor - obiekt"""@pl ,
+  """monastery"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:housing_building
+ .
+
+ontowikikul:chapel
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kaplica - obiekt"""@pl ,
+  """chapel"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:building
+ .
+
+ontowikikul:filial_church
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kościół filialny"""@pl ,
+  """filial church"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:church
+ .
+
+ontowikikul:cathedral_church
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kościół katedralny"""@pl ,
+  """cathedral church"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:church
+ .
+
+ontowikikul:collegiate_church
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kościół kolegiacki"""@pl ,
+  """collegiate church"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:church
+ .
+
+ontowikikul:hospital_church
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """kościół szpitalny"""@pl ,
+  """collegiate church"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:church
+ .
+
+ontowikikul:settlement
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """osada"""@pl ,
+  """settlement"""@en
+ .
+
+ontowikikul:mill_settlement
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """osada młyńska"""@pl ,
+  """mill settlement"""@en
+  ;
+ ontowikikul:subclass_of ontowikikul:settlement
+ .
+
+ontowikikul:formatter_url
+ a rdf:Property
+  ;
+ rdfs:label
+  """format de l'URL"""@fr ,
+  """URL di formattazione"""@it ,
+  """маска URL"""@ru ,
+  """URL-Formatierer"""@de ,
+  """URL-formaat"""@nl ,
+  """URL-format"""@da ,
+  """format för URL"""@sv ,
+  """URL de formatação"""@pt ,
+  """formázó URL"""@hu ,
+  """URL pro zformátování"""@cs ,
+  """formatter URL"""@en-gb ,
+  """URL форматер"""@sr ,
+  """format URL"""@pl ,
+  """URL 서식"""@ko ,
+  """نشانی اینترنتی مرجع"""@fa ,
+  """URL-format"""@nb ,
+  """formato de URL"""@es ,
+  """URL-muoto"""@fi ,
+  """фарматар URL"""@be ,
+  """বিন্যাসকারী ইউআরএল"""@bn ,
+  """書式指定URL"""@ja ,
+  """format d'URL"""@ca ,
+  """URL formater"""@bs ,
+  """URL za oblikovanje poveznica"""@hr ,
+  """URL-обликувач"""@mk ,
+  """ढाँचावद्ध युआरएल"""@ne ,
+  """URL de formatu"""@ast ,
+  """URL formāts"""@lv ,
+  """шаблон URL"""@uk ,
+  """URL formatua"""@eu ,
+  """URL di furmattazzioni"""@scn ,
+  """formato de URL"""@gl ,
+  """форматтер URL"""@ce ,
+  """URL-formaat"""@fy ,
+  """formato de URL"""@pt-br ,
+  """תבנית URL"""@he ,
+  """định dạng URL"""@vi ,
+  """URL-Formaat"""@nds ,
+  """маска URL"""@be-tarask ,
+  """รูปแบบยูอาร์แอล"""@th ,
+  """المسار المنسق"""@ar ,
+  """URL-formoot"""@frr ,
+  """URL-formatilo"""@eo ,
+  """URL-snið"""@fo ,
+  """pemformat URL"""@id ,
+  """URL fformatio"""@cy ,
+  """formatter URL"""@sco ,
+  """格式化URL"""@zh-hans ,
+  """格式化URL"""@zh-hant ,
+  """format de l'URL"""@oc ,
+  """URL pemformat"""@ms ,
+  """ниқоби URL"""@tg ,
+  """格式化统一资源定位符"""@zh ,
+  """ниқоби URL"""@tg-cyrl ,
+  """URL-mønster"""@nn ,
+  """μορφή διεύθυνσης URL"""@el ,
+  """URL битлеге"""@ba ,
+  """șablon URL"""@ro ,
+  """URL formatı"""@tr ,
+  """URL-Formatéierer"""@lb ,
+  """یو آر ایل مرجع"""@ur ,
+  """formatues i URL"""@sq ,
+  """ഫോർമാറ്റർ യു.ആർ.എൽ."""@ml ,
+  """格式化URL"""@zh-tw ,
+  """格式化URL"""@zh-cn ,
+  """格式化URL"""@zh-sg ,
+  """格式化URL"""@zh-my ,
+  """格式化URL"""@zh-hk ,
+  """格式化URL"""@zh-mo ,
+  """furmad an URL"""@br ,
+  """formatter URL"""@en ,
+  """يو. ار. ايل. ڤمفورمت"""@ms-arab ,
+  """forma de URL"""@vec ,
+  """प्रारूपक URL"""@hi ,
+  """URL-ååʹbleǩ"""@sms ,
+  """URL-hápmi"""@se ,
+  """URL-häämi"""@smn ,
+  """URL formatı"""@az ,
+  """formatter URL"""@dag ,
+  """oblikovalnik URL"""@sl ,
+  """URL битлеге"""@tt-cyrl ,
+  """formatlovchi URL"""@uz
+  ;
+ schema:description
+  """URL-ähnliche Zeichenkette, wie \"https://wikidata.org/wiki/$1/\", bei der \"$1\" automatisch ersetzt wird mit dem tatsächlichen Eigenschaftswert eines Datenobjekts (genutzt bei der Definition von Eigenschaften)."""@de ,
+  """URL-agtig streng hvor en del kan blive substitueret"""@da ,
+  """URL-lik sträng, t.ex. \"http://viaf.org/viaf/$1/\", från vilket $1 automatiskt kan ersättas av egenskapens värde. (Använd för uttalanden i egenskaper)"""@sv ,
+  """string do tipo URL, tal como \"http://viaf.org/viaf/Noutras línguas/\", a partir da qual  \"Noutras línguas\" pode ser substituído automaticamente pelo valor efetivo da propriedade nos itens (utilizado em declarações em propriedades)"""@pt ,
+  """URL-szerű karaktersor, pl. „http://viaf.org/viaf/$1”, ahol a „$1” automatikusan kicserélődik a tulajdonság értékére (tulajdonságok állításainál használd)"""@hu ,
+  """на сущностях-свойствах: адрес страницы для веб браузеров; маска URL, в которой \"$1\" обозначает подставляемое значение"""@ru ,
+  """نشانی اینترنتی‌ وبگاهی که خصوصیت مورد نظر از آن برداشته می‌شود"""@fa ,
+  """chaîne représentant une URL générique avec paramètres (à utiliser dans les déclarations sur les propriétés)"""@fr ,
+  """URL-aktig streng, som f.eks. «http://viaf.org/viaf/$1/», der $1 automatisk kan erstattes med egenskapens verdi. (Bruk som utsagn for egenskaper.)"""@nb ,
+  """un patrón de URL genérico, personalizable para cada declaración según el valor introducido (uso en declaraciones de propiedades, ejemplo: \"http://www.wikidata.org/wiki/$1\", donde \"$1\" cambiará al valor de la propiedad con este formato de URL)"""@es ,
+  """маска URL, у якім знакі $ і 1 разам пазначаюць значэнне, якое падстаўляецца"""@be ,
+  """「http://viaf.org/viaf/$1/」のようなURLの形をした文字列で、「$1」が項目におけるそのプロパティの実効値で自動的に置換できる（プロパティに関する文で使われる）。もしサイトが閉鎖された場合は、ランクを「非推奨」に変更します。もし新しいURLへサイトが移動した場合は、新たにデータを追加して、ランクを「推奨」にします。"""@ja ,
+  """una stringa tipo URL che contiene un segnaposto $1 che opportunamente sostituito genera un indirizzo URL dereferenziabile (cliccabile); usata nelle dichiarazioni relative a proprietà, es http://viaf.org/viaf/$1/"""@it ,
+  """cadena d'estilu URL, como «http://viaf.org/viaf/$1/», onde «$1» pue trocase automáticamente pol valor efeutivu de la propiedá (usar en declaraciones de propiedaes)"""@ast ,
+  """URL generiko bat parametroekin agertzen den katea"""@eu ,
+  """string do tipo URL, tal como \"http://viaf.org/viaf/$1/\", a partir da qual \"$1\" pode ser substituído automaticamente pelo valor efetivo da propriedade nos itens (utilizado em declarações de propriedades)"""@pt-br ,
+  """маска URL, напрыклад «http://viaf.org/viaf/$1/», у якой «$1» аўтаматычна замяняецца на падстаўленае значэньне"""@be-tarask ,
+  """해당 속성의 값(식별자)에 상응하는 정보를 볼 수 있는 URL의 서식"""@ko ,
+  """маска URL для властивості, у якій '$1' позначає значення властивості елемента, на якому використана властивість. Якщо сайт неактивний, встановіть для нього застарілий ранг. Якщо шаблон URL змінюється, додайте нове твердження з пріоритетним рангом."""@uk ,
+  """ciąg w formacie URL, gdzie za \"$1\" będzie można podstawić wartość właściwości w elementach"""@pl ,
+  """string berupa URL, yang \"$1\" dari diganti dengan nilai atribut pada butir yang benar"""@id ,
+  """Templat URI di mana \"$1\" boleh digantikan secara automatik dengan nilai yang sesuai pada item"""@ms ,
+  """ниқоби URL, ки \"$1\" маънои вироишшударо нишон медиҳад"""@tg ,
+  """în proprietăți, modelul adresei URL, în care expresia „$1” este înlocuită cu valori concrete"""@ro ,
+  """genellikle dizin web sitelerinde çok sık değişmese de, değişebilen URL adresinin formatı. Site çevrimdışı durumdaysa, kullanımdan kaldırıldığı belirtin"""@tr ,
+  """വെബ് പേജോ  URL എന്നിവ, \"$1\"  എന്ന വേരിയബിൾ മാറ്റം വരുത്താവുന്ന ഒരു ടെമ്പ്‌ലേറ്റ്. ഉദാഹരണമായി (http://viaf.org/viaf/$1/), ഇതിൽ $1\" നു പകരം VIAF ID ഉപയോഗിച്ച് ശരിക്കുള്ള  URL നിർമിക്കാം."""@ml ,
+  """web page URL; URI template from which \"$1\" can be automatically replaced with the effective property value on items"""@en ,
+  """šablona pro URL, ze které se nahrazením „$1“ za identifikátor získá adresa webové stránky pro příslušný identifikátor"""@cs ,
+  """用于搭配标识符以生成网页链接的固定字符串"""@zh ,
+  """verkkosivun URL, johon voidaan automaattisesti korvata muuttujan arvo kohtaan \"$1\""""@fi ,
+  """一個固定的字串，用於搭配不同的識別碼以生成網頁連結"""@zh-hant ,
+  """URL spletnega mesta; predloga URI, pri kateri se lahko »$1« samodejno zamenjava z veljavno lastnostjo predmeta. Če spletišče ni več navoljo, ga nastavite na »opuščeno mesto«. Če se oblikovalnik URL-ja spremeni, dodajte novo izjavo z želenim mestom."""@sl ,
+  """veb-sahifaning URL manzili;  URI shabloni, undan \"$1\" avtomatik ravishda elementlardagi samarali xususiyat qiymati bilan almashtirilishi mumkin. Agar sayt oflayn bo'lsa, uni eskirgan darajaga o'rnating. Agar formatlovchining URL manzili o'zgarsa, a"""@uz
+  ;
+ skos:altLabel
+  """نشانی منبع خصوصیت"""@fa ,
+  """یو آر ال منبع"""@fa ,
+  """یو آر ال مرجع"""@fa ,
+  """patrón de URL"""@es ,
+  """URL-форматер"""@mk ,
+  """תבנית כתובת"""@he ,
+  """фарматавальнік URL"""@be-tarask ,
+  """шаблён URL"""@be-tarask ,
+  """formátovací URL"""@cs ,
+  """URL шаблон"""@uk ,
+  """форматер URL"""@uk ,
+  """форматтер URL"""@ru ,
+  """шаблон URL"""@ru ,
+  """corak URL"""@ms ,
+  """templat URL"""@ms ,
+  """URL模板"""@zh ,
+  """URL模式"""@zh ,
+  """URL格式"""@zh ,
+  """URL格式字符串"""@zh ,
+  """格式化URL"""@zh ,
+  """统一资源定位符模板"""@zh ,
+  """统一资源定位符格式"""@zh ,
+  """统一资源定位符格式字符串"""@zh ,
+  """URL маскаһы"""@ba ,
+  """URL форматтеры"""@ba ,
+  """URL ҡалыбы"""@ba ,
+  """șablon de URL"""@ro ,
+  """model de URL"""@ro ,
+  """model URL"""@ro ,
+  """format de URL"""@ro ,
+  """format URL"""@ro ,
+  """URL biçimi"""@tr ,
+  """URL şablonu"""@tr ,
+  """URL adresi biçimi"""@tr ,
+  """مسار منسق"""@ar ,
+  """формат URL адресе"""@sr ,
+  """формат УРЛ адресе"""@sr ,
+  """sablon URL"""@hu ,
+  """URL-sablon"""@hu ,
+  """URL pattern"""@en ,
+  """URL template"""@en ,
+  """URL formatter"""@en ,
+  """URL format string"""@en ,
+  """URL templaatti"""@fi ,
+  """URL formaatti"""@fi ,
+  """formato dell'URL"""@it ,
+  """URL-formatt"""@sms ,
+  """URL-vzorec"""@sl ,
+  """URL-predloga"""@sl ,
+  """niz za oblikovanje URL-ja"""@sl
+ .
+
+ontowikikul:formatter_uri_for_rdf_resource
+ a rdf:Property
+  ;
+ rdfs:label
+  """formatter URI for RDF resource"""@en ,
+  """URI-шаблон для RDF-ресурса"""@ru ,
+  """УРИ шаблон за RDF изворе"""@sr ,
+  """RDFリソースのURIパターン"""@ja ,
+  """URI obrazac za RDF resurse"""@bs ,
+  """schema URI pâ risorsa RDF"""@scn ,
+  """URI-Muster für RDF-Ressource"""@de ,
+  """structure de l'URI pour les ressources RDF"""@fr ,
+  """URI-formaat voor RDF-bron"""@nl ,
+  """URI-образец за RDF-извор"""@mk ,
+  """узор URL для RDF-рэсурсу"""@be-tarask ,
+  """RDF 자원용 URI 규칙"""@ko ,
+  """URI-шаблон для RDF-рэсурсу"""@be ,
+  """RDF-forrás formázó URL-je"""@hu ,
+  """URI-mønster for RDF-ressource"""@da ,
+  """URI-mønster for RDF-ressurs"""@nb ,
+  """URI-mønster for RDF-ressurs"""@nn ,
+  """formato de URL para recurso RDF"""@es ,
+  """RDF资源格式化URI"""@zh-hans ,
+  """estructura de l'URI per las ressorsas RDF"""@oc ,
+  """templat URI RDF"""@ms ,
+  """RDF URI šablons"""@lv ,
+  """estructura de l'URL pels recursos RDF"""@ca ,
+  """RDF资源格式化URI"""@zh ,
+  """шаблони URL барои RDF-ресурс"""@tg ,
+  """RDF:ssä käytetty URL-muoto"""@fi ,
+  """URI dùng trong RDF"""@vi ,
+  """estructura URL para recurso RDF"""@gl ,
+  """struttura dell'URI di una risorsa RDF"""@it ,
+  """RDF kaynaklarının URI formatı"""@tr ,
+  """URI-шаблон для RDF-ресурсу"""@uk ,
+  """المسار المنسق لموارد إطار توصيف الموارد"""@ar ,
+  """نشانی اینترنتی منابع آر دی اف به صورت یو آر ال"""@fa ,
+  """estructura URL de los recursos RDF"""@ast ,
+  """URI-format för RDF-resurs"""@sv ,
+  """pemformat URI untuk konten RDF"""@id ,
+  """estrutura de URI para o recurso RDF"""@pt ,
+  """RDF资源格式化URI"""@zh-cn ,
+  """RDF資源格式化URI"""@zh-hant ,
+  """RDF資源格式化URI"""@zh-hk ,
+  """RDF資源格式化URI"""@zh-tw ,
+  """format URI dla zasobów RDF"""@pl ,
+  """framm an URL evit ar mammennoù RDF"""@br ,
+  """כתובת URI מעצבת למשאבי RDF"""@he ,
+  """RDF-ресурска URI-калып"""@tt-cyrl ,
+  """RDF-ресурска URI-калып"""@tt ,
+  """formatator URI pentru resursa RDF"""@ro ,
+  """strutura de l'URL par resorse RDF"""@vec ,
+  """ŋmahili URI for RDF binsheŋa"""@dag ,
+  """vzorec URI za vir RDF"""@sl
+  ;
+ schema:description
+  """formatter URL for RDF resource: URI template from which \"$1\" can be automatically replaced with the effective property value on items (it is the URI of the resources, not the URI of the RDF file describing it)"""@en ,
+  """RDFリソースのためのフォーマッターURL： \"$1\" がアイテム上の実際のプロパティ値に自動的に置き換えられるURIテンプレート（これはリソースのURIであり、それを記述するRDFファイルのURIではない）"""@ja ,
+  """schema URI di na risorsa RDF currispunnenti"""@scn ,
+  """схема URI адпаведнага RDF-рэсурсу"""@be-tarask ,
+  """대응하는 RDF 자원의 URI 스키마"""@ko ,
+  """URL pemformat untuk sumber RDF: tempat UURI di mana \"$1\" boleh digantikan secara automatik dengan nilai sifat yang efektif pada item"""@ms ,
+  """格式化程序的URI资源描述框架资源:URI模板“$1”可以自动更换物品的有效属性值"""@zh ,
+  """на сущностях-свойствах: форматирование для использования в качестве RDF ресурсов"""@ru ,
+  """URL-mønster for RDF-ressurs; URI-mal der «$1» automatisk avløyser den gjeldande verdien til eit element"""@nn ,
+  """URL du formateur pour la ressource RDF : modèle d'URI à partir duquel \"$1\" peut être automatiquement remplacé par la valeur de propriété effective sur les éléments (c'est l'URI des ressources, pas l'URI du fichier RDF le décrivant)"""@fr ,
+  """RDF kaynağı için URL adresi biçimi: \"$1\" türü değişkendir ve URL adresinde değişebilen alan anlamına gelir."""@tr ,
+  """на сутностях-властивостях: форматування для використання як RDF ресурсів"""@uk ,
+  """formaterings-URL för RDF-resurs: URI-mall från vilken \"$1\" automatiskt kan ersättas med egenskapsvärdet på objektet"""@sv ,
+  """URL de formatare pentru resursa RDF: format URI din care „$1” poate fi înlocuit automat cu valoarea efectivă a proprietății pe articole (este URI-ul resurselor, nu URI-ul fișierului RDF care îl descrie)"""@ro ,
+  """patrón de URL para un recurso RDF, donde $1 puede ser reemplazado por el valor de la propiedad, para obtener una URI que identifica al recurso, no confundir con la URI del archivo RDF que lo describe"""@es ,
+  """adres URL formatujący dla zasobu RDF; szablon URI, gdzie za \"$1\" będzie można podstawić wartość właściwości w elementach (jest to URI zasobów, a nie URI opisującego je pliku RDF)"""@pl
+  ;
+ skos:altLabel
+  """RDF URL pattern"""@en ,
+  """URI pattern for RDF resource"""@en ,
+  """formatter URL for RDF resource"""@en ,
+  """URL template for RDF resource"""@en ,
+  """RDF URI template"""@en ,
+  """URI used in RDF"""@en ,
+  """formatter URI of the RDF resources"""@en ,
+  """RDF formatter URL"""@en ,
+  """RDF를 위한 URL 서식"""@ko ,
+  """RDF를 위한 URL 규칙"""@ko ,
+  """RDF 자원용 URL 서식"""@ko ,
+  """RDF 자원의 URL 스키마"""@ko ,
+  """RDF를 위한 URL 스키마"""@ko ,
+  """RDF 자원용 URL 스키마"""@ko ,
+  """corak URL RDF"""@ms ,
+  """URL pemformat untuk sumber RDF"""@ms ,
+  """templat URL untuk sumber RDF"""@ms ,
+  """资源描述框架URI模式"""@zh ,
+  """资源描述框架资源URI模式"""@zh ,
+  """格式化程序的URI资源描述框架资源"""@zh ,
+  """资源描述框架资源URI模板"""@zh ,
+  """RDF URI"""@ru ,
+  """RDF-URL-mønster"""@nn ,
+  """URL-mønster for RDF-ressurs"""@nn ,
+  """URL-mal for RDF-ressurs"""@nn ,
+  """mẫu URL RDF"""@vi ,
+  """RDF URL kalıbı"""@tr ,
+  """RDF için URL deseni"""@tr ,
+  """RDF URL şablonu"""@tr ,
+  """RDF için URL adres biçimi"""@tr ,
+  """RDF için URL adresi formatı"""@tr ,
+  """RDF URI шаблон"""@uk ,
+  """patrón d'URL pa RDF"""@ast ,
+  """RDF URI"""@sv ,
+  """RDF URL"""@sv
+ .
+
+ontowikikul:ontohgis
+ a rdf:Property
+  ;
+ rdfs:label
+  """ontohgis:"""@en ,
+  """ontohgis:"""@pl
+  ;
+ schema:description
+  """@prefix ontohgis: <https://onto.kul.pl/ontohgis/> ."""@en ,
+  """@prefix ontohgis: <https://onto.kul.pl/ontohgis/>"""@pl
+  ;
+ ontowikikul:formatter_url """https://onto.kul.pl/ontohgis/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """https://onto.kul.pl/ontohgis/$1"""
+ .
+
+ontowikikul:ontowikikul
+ a rdf:Property
+  ;
+ rdfs:label
+  """ontowikikul:"""@en ,
+  """ontowikikul:"""@pl
+  ;
+ schema:description
+  """@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> ."""@en ,
+  """@prefix ontowikikul: <https://onto.kul.pl/ontowikikul/> ."""@pl
+  ;
+ ontowikikul:formatter_url """https://onto.kul.pl/ontowikikul/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """https://onto.kul.pl/ontowikikul/$1"""
+ .
+
+ontowikikul:location
+ a rdf:Property
+  ;
+ rdfs:label
+  """lokalizacja"""@pl ,
+  """location"""@en
+  ;
+ schema:description
+  """the geo coordinates of the place"""@en ,
+  """współrzędne geograficzne miejsca"""@pl
+  ;
+ owl:sameAs schema:geo
+ .
+
+ontowikikul:parish_provostry
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """prepozytura parafialna"""@pl ,
+  """parish provostry"""@en
+ .
+
+ontowikikul:pays_tax_on
+ a rdf:Property
+  ;
+ rdfs:label
+  """płaci podatek od"""@pl ,
+  """pays tax on"""@en
+  ;
+ schema:description
+  """przedmiot opodatkowania; przedmiot podatku"""@pl
+  ;
+ skos:altLabel
+  """przedmiot opodatkowania"""@pl ,
+  """przedmiot podatku"""@pl
+ .
+
+ontowikikul:stated_in_item
+ a rdf:Property
+  ;
+ rdfs:label
+  """występuje w elemencie"""@pl ,
+  """stated in item"""@en
+  ;
+ schema:description
+  """further information about the subject resource in item"""@en ,
+  """dalsze informacje na temat danego zasobu w elemencie"""@pl
+  ;
+ skos:altLabel
+  """described by item"""@en ,
+  """source"""@en ,
+  """rdfs:seeAlso"""@en ,
+  """opisano w elemencie"""@pl ,
+  """źródło"""@pl
+ .
+
+ontowikikul:stated_in_URL
+ a rdf:Property
+  ;
+ rdfs:label
+  """występuje w URL"""@pl ,
+  """stated in URL"""@en
+  ;
+ schema:description
+  """further information about the subject resource in URL"""@en ,
+  """dalsze informacje na temat danego zasobu w internecie"""@pl
+  ;
+ skos:altLabel
+  """described in URL"""@en ,
+  """rdfs:seeAlso"""@en ,
+  """internet source"""@en ,
+  """opisano w internecie"""@pl ,
+  """źródło internetowe"""@pl
+  ;
+ owl:sameAs schema:url
+ .
+
+ontowikikul:wikidata
+ a rdf:Property
+  ;
+ rdfs:label
+  """wikidata:"""@en ,
+  """wikidata:"""@pl
+  ;
+ schema:description
+  """@prefix wikidata: <http://www.wikidata.org/entity/> ."""@en ,
+  """@prefix wikidata: <http://www.wikidata.org/entity/> ."""@pl
+  ;
+ ontowikikul:formatter_url """http://www.wikidata.org/entity/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://www.wikidata.org/entity/$1"""
+ .
+
+ontowikikul:owl
+ a rdf:Property
+  ;
+ rdfs:label
+  """owl:"""@en ,
+  """owl:"""@pl
+  ;
+ schema:description
+  """@prefix owl: <http://www.w3.org/2002/07/owl#> ."""@en ,
+  """@prefix owl: <http://www.w3.org/2002/07/owl#> ."""@pl
+  ;
+ ontowikikul:formatter_url """http://www.w3.org/2002/07/owl#$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://www.w3.org/2002/07/owl#$1"""
+ .
+
+ontowikikul:exact_match
+ a rdf:Property
+  ;
+ rdfs:label
+  """odpowiednik"""@pl ,
+  """exact match"""@en
+  ;
+ schema:description
+  """URL that unambiguously indicates the item's identity; e.g. the URL of the item's Wikipedia page, Wikidata entry, or official website"""@en ,
+  """adres URL, który jednoznacznie wskazuje tożsamość elementu, np. adres URL strony Wikipedii, wpisu Wikidata lub oficjalnej strony internetowej"""@pl
+  ;
+ owl:sameAs wikidata:P2888
+  ;
+ ontowikikul:exact_match <http://schema.org/sameAs>
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """$1"""
+ .
+
+ontowikikul:dariah_lab_id
+ a rdf:Property
+  ;
+ rdfs:label
+  """Dariah.lab ID"""@en ,
+  """identyfikator Dariah.lab"""@pl
+  ;
+ schema:description
+  """persistent ID assigned by the Dariah.lab consortium"""@en ,
+  """trwały identyfikator nadawany przez konsorcjum Dariah.lab"""@pl
+  ;
+ ontowikikul:formatter_url """http://hdl.handle.net/$1"""
+ .
+
+ontowikikul:earliest_date
+ a rdf:Property
+  ;
+ rdfs:label
+  """najwcześniejsza data"""@pl ,
+  """earliest date"""@en
+  ;
+ owl:sameAs wikidata:P1319
+ .
+
+ontowikikul:latest_date
+ a rdf:Property
+  ;
+ rdfs:label
+  """najpóźniejsza data"""@pl ,
+  """latest date"""@en
+  ;
+ owl:sameAs wikidata:P1326
+ .
+
+ontowikikul:plwordnet
+ a ontowikikul:individual
+  ;
+ rdfs:label
+  """plWordNet"""@en ,
+  """Słowosieć"""@pl
+  ;
+ schema:description
+  """a relational lexico-semantic dictionary which reflects the lexical system of the Polish language"""@en ,
+  """relacyjny słownik semantyczny, który odzwierciedla system leksykalny języka polskiego"""@pl
+  ;
+ ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/>
+ .
+
+ontowikikul:is_defined_by_item
+ a rdf:Property
+  ;
+ rdfs:label
+  """is defined by item"""@en ,
+  """zdefiniowano przez element"""@pl
+  ;
+ schema:description
+  """the defininition of the subject in element"""@en ,
+  """definicja przedmiotu w elemencie"""@pl
+  ;
+ skos:altLabel
+  """rdfs:isDefinedBy"""@en ,
+  """rdfs:isDefinedBy"""@pl
+  ;
+ ontowikikul:subproperty ontowikikul:is_defined_by
+ .
+
+ontowikikul:access_date
+ a rdf:Property
+  ;
+ rdfs:label
+  """access date"""@en ,
+  """data dostępu"""@pl
+  ;
+ schema:description
+  """access date of the resource"""@en ,
+  """data dostępu do zasobu"""@pl
+  ;
+ skos:altLabel
+  """generated at time"""@en ,
+  """retrieved"""@en
+  ;
+ ontowikikul:is_defined_by_URL <https://www.w3.org/TR/2013/REC-prov-o-20130430/#generatedAtTime>
+ .
+
+ontowikikul:encyklopedia_katolicka
+ a ontowikikul:book
+  ;
+ rdfs:label
+  """Encyklopedia katolicka"""@pl ,
+  """Encyklopedia katolicka"""@en
+  ;
+ owl:sameAs wikidata:Q9253852
+ .
 
 ontowikikul:wojciech_goralski
-	a
-		owl:NamedIndividual ,
-		ontowikikul:person
-		;
-	rdfs:label
-		"Wojciech Góralski"@en ,
-		"Wojciech Góralski"@pl
-		;
-	.
+ a ontowikikul:individual
+  ;
+ rdfs:label
+  """Wojciech Góralski"""@pl ,
+  """Wojciech Góralski"""@en
+  ;
+ owl:sameAs wikidata:Q9376510
+ .
 
-schema:description
-	a owl:AnnotationProperty ;
-	.
+ontowikikul:author
+ a rdf:Property
+  ;
+ rdfs:label
+  """author"""@en ,
+  """autor"""@pl
+  ;
+ schema:description
+  """twórca utworu pisanego, np. artykułu lub książki"""@pl ,
+  """creator of a written work, such as an article or book"""@en
+  ;
+ owl:sameAs wikidata:P50
+ .
 
-[]
-	a owl:Axiom ;
-	owl:annotatedProperty rdfs:comment ;
-	owl:annotatedSource ontowikikul:cathedral_chapter ;
-	owl:annotatedTarget "In accordance with canon law, a cathedral chapter is a college of clerics (chapter) formed to advise a bishop and, in the case of a vacancy of the episcopal see in some countries, to govern the diocese in his stead" ;
-	ontowikikul:access_date "2024-10-24T00:00:00Z"^^xsd:dateTime ;
-	ontowikikul:stated_in_URL <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
-	.
+ontowikikul:title
+ a rdf:Property
+  ;
+ rdfs:label
+  """title"""@en ,
+  """tytuł"""@pl
+  ;
+ owl:sameAs wikidata:P1476
+ .
 
-[]
-	a owl:Axiom ;
-	owl:annotatedProperty ontowikikul:is_defined_by_string ;
-	owl:annotatedSource ontowikikul:cathedral_chapter ;
-	owl:annotatedTarget "college of clergy (canons and prelates) at a cathedral, performing liturgical, administrative, and advisory functions for the diocesan bishop" ;
-	ontowikikul:language "en" ;
-	.
+ontowikikul:volume
+ a rdf:Property
+  ;
+ rdfs:label
+  """volume"""@en ,
+  """tom"""@pl
+  ;
+ schema:description
+  """numer tomu"""@pl ,
+  """volume number"""@en
+  ;
+ owl:sameAs wikidata:P478
+  ;
+ owl:sameAs schema:volumeNumber
+ .
 
-[]
-	a owl:Axiom ;
-	owl:annotatedProperty ontowikikul:is_defined_by_string ;
-	owl:annotatedSource ontowikikul:cathedral_chapter ;
-	owl:annotatedTarget "kolegium duchownych (kanoników i prałatów) przy katedrze, pełniące funkcje liturgiczne, administracyjne i doradcze dla biskupa diecezjalnego" ;
-	ontowikikul:language "pl" ;
-	.
+ontowikikul:columns
+ a rdf:Property
+  ;
+ rdfs:label
+  """column(s)"""@en ,
+  """kolumna/kolumny"""@pl
+  ;
+ owl:sameAs wikidata:P3903
+ .
 
-[]
-	a owl:Axiom ;
-	owl:annotatedProperty ontowikikul:stated_in_URL ;
-	owl:annotatedSource ontowikikul:cathedral_chapter ;
-	owl:annotatedTarget <http://plwordnet.pwr.wroc.pl/wordnet/5f9cb130-28e9-11eb-bb0d-df92dcf06d45> ;
-	ontowikikul:access_date "2024-10-28T00:00:00Z"^^xsd:dateTime ;
-	.
+ontowikikul:individual
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """Indywiduum"""@en ,
+  """indywiduum"""@pl
+  ;
+ schema:description
+  """The class of named individuals"""@en ,
+  """Klasa obejmująca instancje, indywidualne obiekty"""@pl
+  ;
+ skos:altLabel
+  """owl:NamedIndividual"""@en
+  ;
+ owl:sameAs owl:NamedIndiviual
+ .
 
-[]
-	a owl:Axiom ;
-	owl:annotatedProperty ontowikikul:stated_in_item ;
-	owl:annotatedSource ontowikikul:cathedral_chapter ;
-	owl:annotatedTarget ontowikikul:encyklopedia_katolicka ;
-	ontowikikul:volume "5" ;
-	.
+ontowikikul:rdf
+ a rdf:Property
+  ;
+ rdfs:label
+  """rdf:"""@en
+  ;
+ schema:description
+  """@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ."""@en
+  ;
+ ontowikikul:formatter_url """http://www.w3.org/1999/02/22-rdf-syntax-ns#$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://www.w3.org/1999/02/22-rdf-syntax-ns#$1"""
+ .
+
+ontowikikul:rdfs
+ a rdf:Property
+  ;
+ rdfs:label
+  """rdfs:"""@en
+  ;
+ schema:description
+  """@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."""@en
+  ;
+ ontowikikul:formatter_url """http://www.w3.org/2000/01/rdf-schema#$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://www.w3.org/2000/01/rdf-schema#$1"""
+ .
+
+ontowikikul:class
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """Class"""@en ,
+  """klasa"""@pl
+  ;
+ schema:description
+  """the class of classes"""@en ,
+  """klasa klas, metaklasa"""@pl
+  ;
+ owl:sameAs rdfs:Class
+  ;
+ owl:sameAs owl:Class
+ .
+
+ontowikikul:subproperty
+ a rdf:Property
+  ;
+ rdfs:label
+  """subproperty"""@en ,
+  """własność podrzędna"""@pl
+  ;
+ schema:description
+  """the subject is a subproperty of a property."""@en ,
+  """podmiot jest własnością podrzędną innej własności"""@pl
+  ;
+ skos:altLabel
+  """rdfs:subPropertyOf"""@en
+  ;
+ owl:sameAs rdfs:subPropertyOf
+ .
+
+ontowikikul:is_defined_by
+ a rdf:Property
+  ;
+ rdfs:label
+  """is defined by"""@en ,
+  """zdefiniowano przez"""@pl
+  ;
+ schema:description
+  """the defininition of the subject resource"""@en ,
+  """podstawa definicji przedmiotu"""@pl
+  ;
+ skos:altLabel
+  """rdfs:isDefinedBy"""@en ,
+  """rdfs:isDefinedBy"""@pl
+  ;
+ owl:sameAs rdfs:isDefinedBy
+ .
+
+ontowikikul:is_defined_by_URL
+ a rdf:Property
+  ;
+ rdfs:label
+  """is defined by URL"""@en ,
+  """zdefiniowano przez URL"""@pl
+  ;
+ schema:description
+  """the defininition of the subject resource in URL"""@en ,
+  """podstawa definicji przedmiotu w internecie"""@pl
+  ;
+ skos:altLabel
+  """rdfs:isDefinedBy"""@en ,
+  """rdfs:isDefinedBy"""@pl
+  ;
+ ontowikikul:subproperty ontowikikul:is_defined_by
+ .
+
+ontowikikul:schema
+ a rdf:Property
+  ;
+ rdfs:label
+  """schema:"""@en ,
+  """schema:"""@pl
+  ;
+ schema:description
+  """@prefix schema: <https://schema.org/#> ."""@en ,
+  """@prefix schema: <https://schema.org/#> ."""@pl
+  ;
+ ontowikikul:formatter_url """https://schema.org/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """https://schema.org/$1"""
+ .
+
+ontowikikul:book
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """book"""@en ,
+  """książka"""@pl
+  ;
+ schema:description
+  """a book"""@en
+  ;
+ owl:sameAs schema:Book
+ .
+
+ontowikikul:is_described_as
+ a rdf:Property
+  ;
+ rdfs:label
+  """is described as"""@en ,
+  """opisano jako"""@pl
+  ;
+ skos:altLabel
+  """rdfs:comment"""@en ,
+  """komentarz"""@pl ,
+  """zdefiniowano jako"""@pl
+  ;
+ owl:sameAs rdfs:comment
+ .
+
+ontowikikul:wikikul_basic_object
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """wikikul basic object"""@en ,
+  """podstawowy obiekt wikikul"""@pl
+  ;
+ schema:description
+  """class of basic properties and items in wikikul"""@en ,
+  """klasa podstawowych własności i elementów w wikikul"""@pl
+ .
+
+ontowikikul:web_application
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """aplikacja internetowa"""@pl ,
+  """web application"""@en
+  ;
+ owl:sameAs schema:WebApplication
+ .
+
+ontowikikul:owns
+ a rdf:Property
+  ;
+ rdfs:label
+  """jest właścicielem"""@pl ,
+  """owns"""@en
+  ;
+ schema:description
+  """posiada prawa własności do czegoś lub kogoś, ma prawa własności nad czymś lub kimś"""@pl ,
+  """has property rights to something or someone, has property rights over something or someone"""@en
+  ;
+ skos:altLabel
+  """posiada"""@pl ,
+  """ma"""@pl
+  ;
+ owl:sameAs schema:owns
+  ;
+ owl:sameAs wikidata:P1830
+  ;
+ owl:sameAs dbpedia:owns
+ .
+
+ontowikikul:dbpedia
+ a rdf:Property
+  ;
+ rdfs:label
+  """dbpedia:"""@pl ,
+  """dbpedia:"""@en
+  ;
+ schema:description
+  """@prefix dbpedia: <https://dbpedia.org/ontology/> ."""@pl ,
+  """@prefix dbpedia: <https://dbpedia.org/ontology/> ."""@en
+  ;
+ ontowikikul:formatter_url """https://dbpedia.org/ontology/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """https://dbpedia.org/ontology/$1"""
+ .
+
+ontowikikul:receives_income_from
+ a rdf:Property
+  ;
+ rdfs:label
+  """przejmuje dochody z"""@pl ,
+  """receives income from"""@en
+  ;
+ schema:description
+  """dotyczy przejęcia dochodów osoby lub instytucji przez inną osobę lub instytucję"""@pl ,
+  """concerns the takeover of revenues from a person or institution by another person or institution"""@en
+ .
+
+ontowikikul:is_defined_by_string
+ a rdf:Property
+  ;
+ rdfs:label
+  """is defined by string"""@en ,
+  """zdefiniowano przez tekst"""@pl
+  ;
+ schema:description
+  """definicja przedmiotu w tekście"""@pl ,
+  """the definition of the subject in string"""@en
+  ;
+ skos:altLabel
+  """rdfs:isDefinedBy"""@pl ,
+  """rdfs:isDefinedBy"""@en
+  ;
+ ontowikikul:subproperty ontowikikul:is_defined_by
+ .
+
+ontowikikul:language
+ a rdf:Property
+  ;
+ rdfs:label
+  """język"""@pl ,
+  """language"""@en
+  ;
+ schema:description
+  """język atrybutu podany w systemie ISO 639-1:2002"""@pl ,
+  """the attribute language given in the ISO 639-1:2002 system"""@en
+  ;
+ owl:sameAs schema:inLanguage
+ .
+
+ontowikikul:manifestation_of_religious_administrative_area
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """manifestacja obszaru administracji religijnej"""@pl ,
+  """manifestation of religious administrative area"""@en
+  ;
+ owl:sameAs ontohgis:object_205
+ .
+
+ontowikikul:crm
+ a rdf:Property
+  ;
+ rdfs:label
+  """crm:"""@pl ,
+  """crm:"""@en
+  ;
+ schema:description
+  """@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> ."""@pl
+  ;
+ ontowikikul:formatter_url """http://www.cidoc-crm.org/cidoc-crm/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://www.cidoc-crm.org/cidoc-crm/$1"""
+ .
+
+ontowikikul:has_representation
+ a rdf:Property
+  ;
+ rdfs:label
+  """has representation"""@en
+  ;
+ owl:sameAs crm:P138i_has_representation
+ .
+
+ontowikikul:date
+ a rdf:Property
+  ;
+ rdfs:label
+  """data"""@pl ,
+  """date"""@en
+ .
+
+ontowikikul:dedication
+ a rdf:Property
+  ;
+ rdfs:label
+  """wezwanie"""@pl ,
+  """dedication"""@en
+  ;
+ schema:description
+  """Określa wezwanie przypisane do dowolnej jednostki kościelnej (np. kościoła, parafii, katedry). Może być to wezwanie proste lub wezwanie złożone."""@pl ,
+  """Specifies the dedication name assigned to any ecclesiastical unit (e.g. church, parish, cathedral). It can be a simple dedication or a composite invocation."""@en
+  ;
+ skos:altLabel
+  """tytuł kościoła"""@pl ,
+  """patrocinium"""@pl ,
+  """title"""@en ,
+  """patrocinium"""@en
+  ;
+ owl:sameAs wikidata:P138 ,
+  wikidata:P417 ,
+  wikidata:P825
+  ;
+ owl:sameAs ontohgis:hasDedicationName
+ .
+
+ontowikikul:includes_simple_dedication
+ a rdf:Property
+  ;
+ rdfs:label
+  """zawiera wezwanie proste"""@pl ,
+  """includes simple dedication"""@en
+  ;
+ schema:description
+  """Wskazuje, które wezwania proste wchodzą w skład wezwania złożonego."""@pl ,
+  """Indicates which simple dedication names are part of a composite dedication name."""@en
+  ;
+ owl:sameAs ontohgis:hasSimpleDedicationName
+ .
+
+ontowikikul:composite_dedication_name
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """Wezwanie złożone"""@pl ,
+  """Composite Dedication Name"""@en
+  ;
+ schema:description
+  """Złożone wezwanie kościoła lub parafii."""@pl ,
+  """A composite dedication of a church or parish."""@en
+  ;
+ owl:sameAs ontohgis:CompositeDedicationName
+ .
+
+ontowikikul:simple_dedication_name
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """Wezwanie proste"""@pl ,
+  """Simple Dedication Name"""@en
+  ;
+ schema:description
+  """Proste wezwanie kościoła lub parafii."""@pl ,
+  """A simple dedication of a church or parish."""@en
+  ;
+ owl:sameAs ontohgis:SimpleDedicationName
+ .
+
+ontowikikul:dedication_order
+ a rdf:Property
+  ;
+ rdfs:label
+  """dedication order"""@en ,
+  """kolejność wezwania"""@pl
+  ;
+ schema:description
+  """Indicates the order of a simple dedication name element within a composite dedication name."""@en ,
+  """Wskazuje kolejność elementu wezwania prostego w ramach wezwania złożonego."""@pl
+  ;
+ owl:sameAs ontohgis:dedicationOrder
+ .
+
+ontowikikul:genitive
+ a rdf:Property
+  ;
+ rdfs:label
+  """Dopełniacz"""@pl ,
+  """Genitive"""@en
+ .
+
+ontowikikul:article
+ a ontowikikul:class
+  ;
+ rdfs:label
+  """Artykuł"""@pl ,
+  """Article"""@en
+  ;
+ schema:description
+  """Tekst naukowy lub opracowanie pisemne, np. artykuł opublikowany w czasopiśmie lub tomie zbiorowym."""@pl ,
+  """A scholarly text or written work, such as an article, typically published in a journal or collected volume."""@en
+ .
+
+ontowikikul:dcterms
+ a rdf:Property
+  ;
+ rdfs:label
+  """dcterms:"""@en ,
+  """dcterms:"""@pl
+  ;
+ schema:description
+  """@prefix dcterms: <http://purl.org/dc/terms/> ."""@en ,
+  """@prefix dcterms: <http://purl.org/dc/terms/> ."""@pl
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://purl.org/dc/terms/$1"""
+  ;
+ ontowikikul:formatter_url """http://purl.org/dc/terms/$1"""
+ .
+
+ontowikikul:bibo
+ a rdf:Property
+  ;
+ rdfs:label
+  """bibo:"""@en ,
+  """bibo:"""@pl
+  ;
+ schema:description
+  """@prefix bibo: <http://purl.org/ontology/bibo/> ."""@en ,
+  """@prefix bibo: <http://purl.org/ontology/bibo/> ."""@pl
+  ;
+ ontowikikul:formatter_url """http://purl.org/ontology/bibo/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://purl.org/ontology/bibo/$1"""
+ .
+
+ontowikikul:foaf
+ a rdf:Property
+  ;
+ rdfs:label
+  """foaf:"""@en ,
+  """foaf:"""@pl
+  ;
+ schema:description
+  """@prefix foaf: <http://xmlns.com/foaf/0.1/> ."""@en ,
+  """@prefix foaf: <http://xmlns.com/foaf/0.1/> ."""@pl
+  ;
+ ontowikikul:formatter_url """http://xmlns.com/foaf/0.1/$1"""
+  ;
+ ontowikikul:formatter_uri_for_rdf_resource """http://xmlns.com/foaf/0.1/$1"""
+ .
+
+ontowikikul:is_affiliated_to
+ a rdf:Property
+  ;
+ rdfs:label
+  """is affiliated to"""@en ,
+  """jest powiązany z"""@pl
+ .
+
+ontowikikul:affiliation_type
+ a rdf:Property
+  ;
+ rdfs:label
+  """affiliation type"""@en ,
+  """typ powiązania"""@pl
+ .
+
+ontowikikul:source_project
+ a rdf:Property
+  ;
+ rdfs:label
+  """projekt źródłowy"""@pl ,
+  """source project"""@en
+  ;
+ schema:description
+  """projekt humanistyki cyfrowej, z którego pochodzi zasób"""@pl ,
+  """digital humanities project from which the resource originates"""@en
+ .
+
+ontowikikul:homepage
+ a rdf:Property
+  ;
+ rdfs:label
+  """strona internetowa"""@pl ,
+  """homepage"""@en
+  ;
+ schema:description
+  """oficjalna strona internetowa projektu"""@pl ,
+  """official website of the project"""@en
+ .
+
+ontowikikul:project_acronym
+ a rdf:Property
+  ;
+ rdfs:label
+  """akronim projektu"""@pl ,
+  """project acronym"""@en
+  ;
+ schema:description
+  """skrócona nazwa identyfikująca projekt"""@pl ,
+  """abbreviated identifier used for the project"""@en
+ .
 
